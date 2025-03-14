@@ -1,0 +1,32 @@
+{
+  "id": "a13bc3f8-124f-418b-b559-d8129255bd1a",
+  "name": "CustomerFilteringTest",
+  "publisher": "Christiaan @ Navertica",
+  "version": "1.0.0.0",
+  "brief": "AL Training Extension : Customer Filtering",
+  "description": "AL Training Extension that filters customers for if thye have a quotation, the amount of the quotation and some of their details",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "https://www.navertica.com/en/company/",
+  "logo": "res/Logo.png",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "25.0.0.0",
+  "idRanges": [
+    {
+      "from": 60150,
+      "to": 60160
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "14.0",
+  "features": [
+    "NoImplicitWith"
+  ]
+}

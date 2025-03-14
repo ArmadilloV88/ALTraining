@@ -1,0 +1,32 @@
+{
+  "id": "2dc16341-8e39-48c9-9830-367e8ac0f767",
+  "name": "BonusCalculationExt",
+  "publisher": "Christiaan @ Navertica SA",
+  "version": "1.0.0.0",
+  "brief": "Extenstion for bonus calculation and registeration",
+  "description": "Extension that allows to register and calculate bonuses for customers",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "https://www.navertica.com/en/company/",
+  "logo": "res/navertica_sa_cc_logo.jpg",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "25.0.0.0",
+  "idRanges": [
+    {
+      "from": 65400,
+      "to": 65600
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "14.0",
+  "features": [
+    "NoImplicitWith"
+  ]
+}

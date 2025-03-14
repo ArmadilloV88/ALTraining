@@ -1,0 +1,45 @@
+{
+  "id": "d9e7e023-e097-47f7-9368-528326f00e44",
+  "name": "BonusCalculationExt_Tests",
+  "publisher": "Christiaan @ Navertica SA",
+  "version": "1.0.0.0",
+  "brief": "Test for the bonus calculation extension",
+  "description": "Test for the bonus calculation extension",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "https://www.navertica.com/en/company/",
+  "logo": "res/navertica_sa_cc_logo.jpg",
+  "dependencies": [{
+    "id": "2dc16341-8e39-48c9-9830-367e8ac0f767",
+    "name": "BonusCalculationExt",
+    "publisher": "Christiaan @ Navertica SA",
+    "version": "1.0.0.0"},
+  {
+    "id": "5d86850b-0d76-4eca-bd7b-951ad998e997",
+    "name": "Tests-TestLibraries",
+    "publisher": "Microsoft Corporation",
+    "version": "25.4.29661.29727"
+  },
+{
+  "id": "dd0be2ea-f733-4d65-bb34-a28f4624fb14",
+    "name": "Library Assert",
+    "publisher": "Microsoft Corporation",
+    "version": "25.4.29661.29727"
+}],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "25.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "14.0"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "3c9353eb-91d1-4bd9-a557-aa330f4abca0",
+  "name": "ALTrainingExtention",
+  "publisher": "Navertica SA",
+  "version": "1.0.0.0",
+  "brief": "AL Training Extension",
+  "description": "This is a training extension",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "https://www.navertica.com/en/company/",
+  "logo": "res/Logo.png",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "25.0.0.0",
+  "idRanges": [
+    {
+      "from": 60100,
+      "to": 60149
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "14.0",
+  "features": [
+    "NoImplicitWith"
+  ]
+}
