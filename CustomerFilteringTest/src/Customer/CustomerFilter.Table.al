@@ -1,5 +1,6 @@
 table 60150 "FlowField Test Table"
 {
+    //These tables use a FlowField to calculate values based on the customer table
     fields
     {
         field(601061; "Customer No"; Code[20])
