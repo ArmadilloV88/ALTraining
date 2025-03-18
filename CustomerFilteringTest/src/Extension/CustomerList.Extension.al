@@ -4,6 +4,8 @@ pageextension 60156 "CustomerListExt" extends "Customer List"
     actions{
         addfirst(processing){
             action(MyBatch){
+                ToolTip = 'Does something';
+                Image = Document;
                 Caption = 'My Batch';
                 ApplicationArea = All;
                 RunObject = Report "My Batch";
@@ -16,7 +18,7 @@ pageextension 60156 "CustomerListExt" extends "Customer List"
     var
         Company: Record Company;
         Customer: Record Customer;
-        Customer2 : Record Customer;
+        //Customer2 : Record Customer;
     begin
         if Company.FindSet() then
             repeat

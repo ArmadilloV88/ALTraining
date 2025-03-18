@@ -14,22 +14,27 @@ page 60159 "RegEx Matches"
             {
                 field(Index; Rec.Index)
                 {
+                    ToolTip = 'Shows the indexs';
                     ApplicationArea = All;
                 }
                 field(MatchIndex; Rec.MatchIndex)
                 {
+                    ToolTip = 'Shows the matching indexes';
                     ApplicationArea = All;
                 }
                 field(Success; Rec.Success)
                 {
+                    ToolTip = 'Shows the success boolean';
                     ApplicationArea = All;
                 }
                 field(Length; Rec.Length)
                 {
+                    ToolTip = 'Shows the length';
                     ApplicationArea = All;
                 }
                 field(Data; GetData(Rec))
                 {
+                    ToolTip = 'Shows the data';
                     ApplicationArea = all;
                     Caption = 'Match';
                 }

@@ -13,11 +13,13 @@ page 60162 "Patterns"
 
                 field(RegEx; Rec.RegEx)
                 {
+                    ToolTip = 'Shows the Regular expression formula';
                     ApplicationArea = All;
                     Width = 5;
                 }
                 field(Description; Rec.Description)
                 {
+                    ToolTip = 'Shows the description';
                     ApplicationArea = All;
                     //MultiLine = true;
                 }

@@ -1,5 +1,7 @@
 page 60153 "Integer Page"
 {
+    UsageCategory = Administration;
+    ApplicationArea = All;
     PageType = List;
     SourceTable = Integer;
     SourceTableView = where(Number = filter('-5..16'));
@@ -7,6 +9,7 @@ page 60153 "Integer Page"
         area(Content){
             repeater(Rep){
                 field(Number; GetValue(Rec.Number)){
+                    ToolTip = 'Shows the Integer Number';
                     Caption = 'Integer Caption';
                     ApplicationArea = All;
                 }

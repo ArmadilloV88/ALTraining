@@ -15,7 +15,7 @@ codeunit 60158 "Custom Transformation"
             begin 
                 OutputText := '';
                 for i := 1 to StrLen(InputText)do
-                        OutputText += InputText[StrLen(InputText)-i + 1];
+                        OutputText += InputText[StrLen(InputText) - i + 1];
             end;
         end;
     end;

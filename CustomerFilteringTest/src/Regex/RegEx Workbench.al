@@ -11,12 +11,14 @@ page 60161 "RegEx Workbench"
         {
             field(InputData; InputData)
             {
+                ToolTip = 'Shows the input data value';
                 Caption = 'Input';
                 ApplicationArea = all;
                 MultiLine = true;
             }
             field(Pattern; Pattern)
             {
+                ToolTip = 'Shows the pattern';
                 Caption = 'Pattern';
                 ApplicationArea = All;
                 trigger OnAssistEdit()
@@ -39,6 +41,8 @@ page 60161 "RegEx Workbench"
         {
             action(MatchAction)
             {
+                image = MachineCenterLoad;
+                ToolTip = 'Shows the match action';
                 caption = 'Match';
                 ApplicationArea = All;
                 Promoted = true;
