@@ -1,0 +1,1141 @@
+What is 365 Dynamics Business Central ?
+---------------------------------------
+-Microsoft Dynamics 365 Business Central is an Enterprise Resource Planning (ERP) solution designed for small to mid-sized businesses (SMBs). It helps organizations manage finance, supply chain, sales, operations, and customer service in one centralized system.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Deployment of Dynamics 365 Business Central
+-------------------------------------------
+-Data is stored on the Microsoft cloud removing the need for installing local database services.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Difference Between an On-Premise and Online Deployment
+------------------------------------------------------
+-Online is hosted on dedicated Microsoft Services (Microsoft Azure) where there is no need for a dedicated IT infrastructure and there is automated security and update patches.
+
+-On-Premises is hosted on the clients dedicated services/own services. Best suited for clients with a good and stable IT infrastructure.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Which One Should You Choose?
+----------------------------
+|Feature        ||Online (Cloud)               | |On-Premise                        |
+|---------------||-----------------------------| |----------------------------------|
+|Hosting        ||Microsoft Azure              | |Local Servers                     |
+|Pricing        ||Monthly Subscription         | |One-Time License                  |
+|Customization  ||Limited, API-based           | |Full Customization                |
+|Security       ||Managed by Microsoft         | |Fully Controlled                  |
+|Updates        ||Automatic                    | |Manual                            |
+|Access	        ||Anywhere (internet required) | |Local Network (no internet needed)|
+|Scalability    ||Easy to Scale                | |Requires IT Upgrades              |
+
+*Choose Cloud If:
+-You want lower upfront costs and a subscription model.
+-You don’t have a dedicated IT team to manage servers and updates.
+-You need remote access and scalability.
+-You prefer Microsoft handling security & backups.
+
+*Choose On-Premise If:
+-You require full control over data, security, and customization.
+-You have existing IT infrastructure and staff.
+-You need direct SQL access and deeper integrations.
+-You prefer manual updates and self-hosted data.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Key Features of Setup for On-Premises Deployments
+-------------------------------------------------
+With Business Central Setup, you can:
+
+-Install different components on different computers.
+
+-Choose from a selection of predefined installation options, or create your own custom list of components and options to install.
+
+-Preconfigure components before installation.
+
+-Create, save, or load setup configuration files that capture your selection of components and configuration information.
+
+-You use setup to install software and to create custom deployments that you can distribute to different users across a company.
+
+Installation Notes
+------------------
+-Before installing Business Central components on a computer, you must remove (uninstall) any previous versions.
+
+-All components must be from the same version and build of Business Central for the software to run correctly.
+
+-If you have either SQL Server 2000 or Microsoft SQL Server Desktop Engine (MSDE) installed on a computer where you want to install Business Central, then you must remove it before you begin installing. The presence of either of these database products causes a setup error.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Development in AL (Application Language)
+----------------------------------------
+AL (Application Language) is the primary programming language used in Microsoft Dynamics 365 Business Central. It is used to develop extensions, customize business logic, and integrate Business Central with other applications.
+
+-Object-Oriented 🛠️ → Works with tables, pages, code units, and other objects.
+
+-Event-Driven ⚡ → Uses event subscribers to modify Business Central without changing core code.
+
+-Cloud-Ready ☁️ → Used to build extensions instead of modifying the base application.
+
+-Integrated with Azure 🔗 → Supports telemetry, API integrations, and Power Automate.
+
+AL has several key objects that define Business Central’s functionality.
+
+|Object Type| |Purpose                                                    |
+|-----------| |-----------------------------------------------------------|
+|Table      | |Stores data in the database.                               |
+|Page	    | |UI elements like lists, cards, and role centers.           |
+|Code unit  | |Contains business logic (similar to C# classes).           |
+|Report     | |Generates printed reports or PDFs.                         |
+|Query      | |Fetches and filters data from multiple tables.             |
+|Enum       | |Defines a set of fixed values (e.g., Status: Open, Closed).|
+|Interface  | |Defines common methods for different objects.              |
+|XMLPort    | |Imports or exports data in XML format.                     |
+
+-Table objects define the table schema that holds data.
+-Page objects represent the pages seen in the user interface.
+-Codeunits contain code for logical calculations and for the application behavior.
+-Report objects define the layout and data for reports.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Code Analytics used
+-------------------
+- CodeCop – provides the set of guidelines (mostly as warnings) related to code (for example 
+if variables are used or not). It is recommended to always have this set on.
+
+- AppSourceCop – provides the set of guidelines (mostly as errors) related to the extension if 
+it would be published on AppSource for general download by any company that uses 
+Business Central.
+
+- UICop – provides the set of guidelines related to the user interface.
+
+- PerTenantExtensionCop – provides the set of guidelines related to extensions that are 
+developed for a particular customer. 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+File Naming Convention
+----------------------
+|Type of the object| |Object Type in File Name|
+|------------------|=|------------------------|
+|Table             | |Table                   |
+|Table Extension   | |TableExt                |
+|Page              | |Page                    |
+|Page Extension    | |PageExt                 |
+|Codeunit          | |Codeunit                |
+|Report            | |Report                  |
+|Report Extension  | |ReportExt               |
+|Enum              | |Enum                    |
+|Enum Extension    | |EnumExt                 |
+|Permission Set    | |PermissionSet           |
+ ---------------------------------------------
+
+Format : <Object Name Excluding Prefix>.<Object Type>.al
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Affixes and Suffixes
+--------------------
+an affix/suffix should contain at least 3 characters for example :
+
+{
+	"mandatoryAffixes": ["NAV"]
+}
+
+This ensures that there is unique code signatures in the Microsoft app source as its mandatory that there must be no conflicts between apps, pages or even tables.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Project Folder Structure
+------------------------
+-There is no mandatory practices or strict rules to follow when structuring your project folders however its good practice to ensure that they are kept organized and neat to ensure effective finding of certain files within a project.
+
+-src - known as the source folder which contains all files related to the functionality.
+
+-res - known as the resources folder which contains the logo of the extension or any other resource based external files.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AL Object Range
+---------------
+-Each/most objects in the database cannot have the same ID number, each must be unique however a table and page can have the same ID number.
+
+-Object range is controlled in the app.json file in the idRanges.
+
+-Available ID range is from 50000 - 99999
+
+-AppSource range starts from 70 million
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+AL (Application Language) Syntax
+--------------------------------
+
+ttable - Table Object Structure
+-------------------------------
+
+Defines a database table in Business Central. Tables store data records.
+it contains the following :
+--------------------------
+✓ Table properties
+✓ Set of fields
+✓ Keys
+✓ Global variables
+✓ Table triggers
+
+-Each table must have a unique number that obeys the object id range
+
+The table has 4 main properties consisting of :
+---------------------------------------------
+-DataClassification - Responsible for the classification of the table in terms of GDPR.
+
+-Caption -Caption of the table which should not contain the prefix or suffix.
+
+-DrillDownPageid - The name of the page will be shown when the user will use the function DrillDown on the page.
+
+-LookupPageid -The name of the page will be shown when the user will use the function lookup on the page.
+
+Table Triggers - allows you to add the code directly to the table. There are 4 main triggers :
+--------
+-OnInsert() - used for inserting data into the table.
+-OnModify() - used to modify existing data and saving to the table.
+-OnDelete() - used to remove/Delete a record/data from the table.
+-OnRename() - used when changing primary key attributes from the table.
+
+Table Fields:
+------------
+-Editable - Determines if a field is editable or not.
+
+-Code - an alphanumeric field that is used mostly when storing unique values as it automatically converts to uppercase. Using the NotBlank property forces input.
+
+-Text - string based attribute used in storing descriptions or addresses consisting of a length of 100 to 2048 chars. using the TableRelation property allows lookup of values outside the current table. 
+
+-Date - attribute used to store date like formats.
+
+-Integer - numerical field that stores whole numbers. Using the BlankZero Property will show an empty value instead of zero, additionally you can use the MinValue and MaxValue properties to set ranges.
+
+-Decimal - numerical field that stores decimal numbers. Using the DecimalPlaces property will set the minimum and maximum number of decimal places.
+
+-Enum - shows the list of options defined in the separate object, ensure you specify which Enum you would like to use.
+
+Field Triggers :
+--------------
+-OnLookup() - allows you to add the code when a user clicks on the page lookup function.
+-OnValidation() - this triggers when a user places input in the field.
+
+Flow Fields :
+------------
+-These are a special class of fields that can be set with the FieldClass property that allows mathematical operations such as count, sum, get maximal or get minimal, allows you to show values from a different table or to check if the record exists (like a Boolean return). 
+
+-Use the CalcFormula property to tell what the flow field should show. 
+
+-These fields must always have an editable property set to false.
+
+Table Keys :
+-----------
+-Each table must atleast have 1 primary key defined however can have more then 1 defined. (Ensure the name has 'PK' in it for example PK_Customer_ID)
+-Use the Get() Method to retrieve specific data.
+
+Permission Sets :
+---------------
+-Special object type that defines which permissions are included in it.
+-Assignable allows specifying if the permissions set can be assigned directly to the users.
+-Determines if the users can edit, delete, read or write to the object.
+
+Table example :
+table 50100 MyTable
+{
+    DataClassification = ToBeClassified;
+
+    fields
+    {
+        field(1; ID; Integer) { PrimaryKey = true; }
+        field(2; Name; Text[50]) { }
+        field(3; CreatedAt; DateTime) { }
+    }
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Enums
+-----
+-is an object type that allows specifying the static options.
+-to extend an Enum you must use the Extensible property set to true.
+-Each Enum value has a number and name which should have an assigned caption each.
+-values from enums start from 0.
+-if you want an empty Enum value then name and with caption =' ' (include the space).
+-remember to add an affix to the Enum.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Page Overview
+-------------
+-Pages allow users to interact with the data by Inserting, modifying, delete data and additionally they can run custom actions.
+
+Pages contain :
+✓ Page properties
+✓ Set of controls
+✓ Set of actions
+✓ Global variables
+✓ Page triggers
+
+Business Central contains different types of lists such as :
+
+-List Page : Is used when more then one record needs to be shown on the page. They are not editable and are mainly used in purchase orders, customers, vendors and employees (basically anything with more then 1 instance) however directories are editable.
+
+-Card Page : Is used when only one record needs to be shown on the page. Usually used for master data for example a single customer, a single record, a single item or a single vendor. These usually are editable however are not able to be delete or insert new data, these are accessible from the menu or tell me functionality.
+
+-Document Page : Is used when there should be a header and lines presented. This is usually used in orders, invoices and posted invoices. Such a page is created using two separate pages, one page is for data from the header table that is presented (such as a type document) and the second one presents lines and is created with the type ListPart which is then added as a document part.
+
+Page Properties
+---------------
+-Each page has its own properties just like tables and enums etc. many of the properties are able to be used on all of the page types however some are specific to certain page types.
+
+-PageType : This property defines the type of page.
+
+-Caption : Caption for the page. It should not contain the prefix or suffix.
+
+-SourceTable : The property describes from which table data is presented on the page. It can be only one table set per page.
+
+-UsageCategory : If the page should be visible from Tell Me functionality, this property is mandatory. Additionally, you will need to fill the ApplicationArea property if you want that page to be seen in the Tell Me. The ApplicationArea property describes in which areas of the system the page is visible.
+
+-Editable : With this property, you can tell if the page is editable or not. By default, it is editable.
+
+-DeleteAllowed, InsertAllowed, ModifyAllowed : The purpose of those three properties should be rather clear. They tell if the page should allow delete, insert or modify records. By default, those properties are set to true.
+
+-CardPageId : This property is only for pages with a type list. You can decide which page will be open as a card page for the list.
+
+Page Triggers
+-------------
+-Like tables, Pages have a few triggers that can be used as well however not all are often used.
+-In triggers you can write code that will run when triggered.
+
+-OnOpenPage() : when opening the page this trigger will be active.
+
+-OnAfterGetCurrRecord() : retrieves a record from the database.
+
+-It is uncommon to put code such as modifying, inserting, editing or deleting within the trigger, rather place those in the table directly.
+
+Page Controls
+-------------
+-Controls are assigned to one of two areas (Content or FactBox)
+
+-In the content area you will find the fields which should be shown on the page. Those fields are grouped in FastTabs(in the case of card and document pages) or the repeater (in the case of list pages).
+
+-You cant control on the screen where the control(field) will be displayed, onl in which group(Fast) and in which order.
+
+-If you place a caption on the respective table it will then show on the pages.
+
+-Best to place triggers in the table like OnValidate() and OnLookup() instead of the page.
+
+-ApplicationArea is the attribute which specifies in which area of the system the field should be shown.
+
+-ToolTip is the attribute that gives the user basic help in the field.
+
+-If you wish to add part control for a page it is possible to do so, simply just link the two pages together via the same document number/ID.
+
+-Your unable to edit a FactBox width or size aswell as if it will be shown in details or attachments on the screen however you can add multiple FactBoxes to the same page.
+
+Page Actions
+------------
+-You are able to code the special actions tab to do specific operations for example opening a new page, run a report, or some code will be triggered when an action button is selected.
+
+These are the properties you will find when coding with actions :
+
+-ApplicationArea - This is a mandatory property which says in which area of the system the action will be available.
+
+-Caption - specifies the caption for the action (label for the action).
+
+-Image - Specifies the image the action will have.
+
+-Promoted - Specifies if this action is set on the home page, if you wish for the action to only be set on the home page then use PromotedOnly set to true. Once promoted you can use the PromotedCategory to set it in a category.
+
+-RunObject - Specifies to run an object, page or Enum if you wish however it must be specified. To link a page and the object use the RunPageLink property to set the attribute accordingly. For incase you run the RunObject property you must then not write code on the OnAction() property.
+
+-ToolTip - This is mandatory for if you publish the app on the AppSource as it gives the user quick help with what the action does.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Table Extension Overview
+------------------------
+-A table extension is an object which allows you to modify the standard table. These contain :
+✓ Properties
+✓ Fields
+✓ Keys
+✓ Global variables
+✓ Table extension triggers
+
+Table Extension Properties
+--------------------------
+-Use Ctrl+space to view the properties present on a standard table.
+
+Table Extension Fields
+----------------------
+-You can add fields to the extension to expand upon the existing fields in the standard table.
+-You can alter a few properties by using the triggers OnBeforeValidate() and OnAfterValidate() which triggers the code before or after the standard code execution.
+-Ensure all fields added to the extension have the correct ID/Number identifier, use your range within your app.json, remember to also include the affix.
+-Some tables copy data between them so once you alter one table ensure that you also alter the other tables associated with that table.
+
+Table Extension Keys
+--------------------
+-You are able to add new keys to the extension however you cant mix standard fields with your new fields.
+
+Table Extension Triggers
+------------------------
+-Similar to fields, you cannot change the standard code however you will need to run the code before or after the standard code execution. for example you can use OnBeforeDelete() or OnAfterDelete() triggers.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Page Extension Overiew
+----------------------
+-is an object which allows you to modify the standard page. These contain:
+✓ Properties
+✓ Controls
+✓ Actions
+✓ Global variables
+✓ Page extension triggers
+
+Page Extension Properties
+-------------------------
+-Use Ctrl+space to view the properties present on a standard Page.
+
+Page Extension Controls
+-----------------------
+-You can add new fields created with either table extensions or standard fields.
+-Adding controls is similar to adding controls on a standard page. However you need to specify in which place the control should be added.
+-Only certain properties can be changed.
+-Controls that are added must have the affix.
+
+Page Extension Actions
+----------------------
+-Similar to the controls, you can modify existing actions or create new actions.
+-Can be triggered after or before running standard code.
+
+Page Extension Triggers
+-----------------------
+-In the page extension, you cannot change the code for standard triggers that are on the page. However, you can add code that will be run before or after the standard code.
+
+Flow Fields - A special class of fields 
+---------------------------------------
+-These are a special class of fields that can be set to FieldClass however they cannot set DataClassification.
+-Allows you to do easy mathematical operations such as sum, count, or getting min and max.
+-Allows the use of lookup to display other table data or checks if a record exists.
+-You can use the CalcFormula property.
+-Always set editable to false.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Procedures
+----------
+-a procedure is essentially a function that contains reusable blocks of code. Procedures help modularize your AL code, making it more readable, maintainable, and reusable.
+
+-There are basic types of procedures such as :
+✓ Global (Access Modifiers) – you will be able to run the procedure from any extension and any other object.
+✓ Local (Access Modifiers) – you will be able to run procedure only in the same object.
+✓ Internal (Access Modifiers) – you will be able to run the procedure from any object but not from different extensions.
+
+Procedure Syntax
+----------------
+<Access Modifier> procedure <procedure name>()
+begin
+
+end;
+
+Examples :
+
+local procedure MyLocalProcedure()
+begin
+
+end;
+
+procedure MyGlobalProcedure()
+begin
+
+end;
+
+procedure MyInternalProcedure()
+begin
+
+end;
+
+-A procedure can also have parameters in it :
+
+local procedure MyLocalProcedure(Customer: Record Customer)
+begin
+
+end;
+
+procedure MyGlobalProcedure(Customer: Record Customer; var
+SalesHeader: Record "Sales Header")
+begin
+
+end;
+
+-Overloading is possible aswell where the same procedure exists but with different parameters.
+
+-Procedures can also have a return type where it returns a specific value back, for example :
+
+local procedure MyLocalProcedure(): Integer
+begin
+    exit(10);
+end;
+
+-This returns an integer value of 10
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Variables
+---------
+-There are 2 main access modifier variables :
+✓ Global – the variable is used in the whole instance of the object.
+✓ Local – the variable is used only in the single run of the procedure or trigger.
+
+-Each has its own type, however here are some more variables that are good to know :
+ ------   -------------------------------------------------------
+|Label | |Used to store text contents like questions and messages|
+ ------   -------------------------------------------------------
+|Record| |Used when retrieving data from the database            |
+ ------   -------------------------------------------------------
+|Page  | |This is used to open a specific page                   |
+ ------   -------------------------------------------------------
+|Report| |Can be used to open a specified page                   |
+ ------   -------------------------------------------------------
+
+-When declaring a variable ensure to place the access modifier to state if it global or local. It should be placed either in the object or in the function for example :
+
+var
+	SalesHeader: Record "Sales Header";
+	NoOfCustomers, NoOfSalesOrders: Integer;
+local procedure MyLocalProcedure()
+var
+	Customer: Record Customer
+begin
+end;
+
+-To assign a value to a variable you can use := for example :
+
+var
+   NoOfCustomers: Integer;
+local procedure MyLocalProcedure()
+begin
+ NoOfCustomers := 1;
+end;
+
+- Keep global variables in one place – do not create many sections of var. 
+- If you have variables of the same type, you can add them in the same line
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Rec - Special Variable on Page and Tables
+-----------------------------------------
+
+-If you wish to pull a specific attribute/value of a record from a table you can use Rec. to do so for example :
+
+local procedure MyLocalProcedure()
+begin
+	if Rec."No." = '10000' then begin
+	...
+	end;
+end;
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+If...Else Statement
+-------------------
+-an if else statement just like any other programming language is to check if a specific condition argument is met before executing a block of code, for example :
+
+if Amount > 1000 then
+    Message('Amount is greater than 1000')
+else
+    Message('Amount is 1000 or less');
+
+or 
+
+if Amount > 1000 then
+begin
+    Message('Amount is high');
+    Discount := 10; // Apply a discount
+end
+else
+begin
+    Message('Amount is low');
+    Discount := 5;  // Apply a smaller discount
+end;
+
+or 
+
+if Amount > 5000 then
+    Message('Amount is greater than 5000')
+elseif Amount > 1000 then
+    Message('Amount is between 1001 and 5000')
+else
+    Message('Amount is 1000 or less');
+
+-The else part is not always needed.
+
+-If some condition should not be true, then you can use not before it.
+
+-You can use it and/or if there are more conditions.
+
+-If more than one line should be executed after the if statement, then put lines between begin and end. If there is only one line, then do not use begin and end.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Get Records Based on Primary Key
+--------------------------------
+-Method Get() is used to get the record values from the database by using the primary key fields.
+-In the parameters you should add values of the fields in the same order as in the defined key. Doing this will result in the retrieval of only one record making the methodology accurate. for example :
+
+var
+  Customer: Record Customer;
+  SalesHeader: Record "Sales Header";
+begin
+ Customer.Get('10000');
+end;
+
+-This code retrieves the values of customers that have the number 10000.
+-Never hardcode the values in the code.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Get Records Based on Filters
+----------------------------
+-often sometimes it is needed to retrieve a record or a set of records based of fields in the table. for example :
+
+-SetRange() method : This method allows you to add a simple filter, you can either put the range of values that you want to filter or you can put only one value. for example :
+
+var
+  Customer: Record Customer;
+  SalesHeader: Record "Sales Header";
+begin
+  Customer.Get('10000');
+  SalesHeader.SetRange("Sell-to Customer No.",Customer."No.");
+  SalesHeader.SetRange("Document Type",Enum::"Sales Document 
+Type"::Order);
+end;
+
+-SetFilter(): This method allows you to add a more complex filter, you can put in the filter a combination of logical operators such as  <, >, .. , &, |, and =. In the filter string, you can also use modules operators like %1, %2 and so on for example :
+
+var
+  Customer: Record Customer;
+  SalesHeader: Record "Sales Header";
+begin
+  Customer.Get('10000');
+  SalesHeader.SetRange("Sell-to Customer No.",Customer."No.");
+  SalesHeader.SetFilter("Document Type",'%1|%2',Enum::"Sales Document 
+Type"::Order,Enum::"Sales Document Type"::Invoice);
+end;
+
+-Reset(): This method is used to remove all filters which are applied to the record variable. For example :
+
+var
+  Customer: Record Customer;
+  SalesHeader: Record "Sales Header";
+begin
+ Customer.Get('10000');
+ SalesHeader.Reset();
+ SalesHeader.SetRange("Sell-to Customer No.",Customer."No.");
+ SalesHeader.SetFilter("Document Type",'%1|%2',Enum::"Sales Document 
+Type"::Order,Enum::"Sales Document Type"::Invoice);
+end;
+
+-FindFirst(), FindLast() : This method allows you to retrieve the first or the last record after filtering records in the database. for example :
+
+var
+  Customer: Record Customer;
+  SalesHeader: Record "Sales Header";
+begin
+ Customer.Get('10000');
+ SalesHeader.SetRange("Sell-to Customer No.",Customer."No.");
+ SalesHeader.SetFilter("Document Type",'%1|%2',Enum::"Sales Document 
+Type"::Order,Enum::"Sales Document Type"::Invoice);
+ SalesHeader.FindFirst()
+end;
+
+-Methods such as FindFirst or FindLast are used if you need to get only one record based on fields that are not part of the primary key (or you do not know all values).
+
+-FindSet() : This method allows you to retrieve a set of records within the filters using the FindSet() statement. You can then later use the repeat until loop to move between the records. For example :
+
+var
+ Customer: Record Customer;
+ SalesHeader: Record "Sales Header";
+begin
+ Customer.Get('10000');
+ SalesHeader.SetRange("Sell-to Customer No.",Customer."No.");
+ SalesHeader.SetFilter("Document Type",'%1|%2',Enum::"Sales Document 
+Type"::Order,Enum::"Sales Document Type"::Invoice);
+ SalesHeader.FindSet();
+end;
+
+-The above example filters the Sales Header table for a specific customer where the document type is Order or Invoice and gets values of the set of records that meets conditions. 
+
+-FindSet is used if you need to get a set of records this is why very often before it you can find SetRange or SetFilter.
+
+-If the record will not be found, you will see the error. This is why very often before FindFirst or FindLast you would see if… then.
+
+-If you would not get retrieve records in the loop, then you will see values from the first record. This is why the FindSet is almost always used with Repeat…Until loop.
+
+-Repeat ... Until : This is a loop that is used to run code until a condition is not satisfied. For example :
+
+var
+ Customer: Record Customer;
+ SalesHeader: Record "Sales Header";
+begin
+ Customer.Get('10000');
+ SalesHeader.SetRange("Sell-to Customer No.",Customer."No.");
+ SalesHeader.SetFilter("Document Type",'%1|%2',Enum::"Sales Document 
+Type"::Order,Enum::"Sales Document Type"::Invoice);
+ SalesHeader.FindSet();
+repeat
+…
+until SalesHeader.Next() = 0;
+end;
+
+-Count() : This statement allows you to count records in the applied filters. For example :
+
+var
+  Customer: Record Customer;
+  SalesHeader: Record "Sales Header";
+  NoOfRecords: Integer;
+begin
+  Customer.Get('10000');
+  SalesHeader.SetRange("Sell-to Customer No.",Customer."No.");
+  SalesHeader.SetRange("Document Type",Enum::"Sales Document 
+Type"::Order);
+  NoOfRecords := SalesHeader.Count;
+end;
+
+-IsEmpty() : this statement allows you to check if the filter would return zero records. For example :
+
+var
+  Customer: Record Customer;
+  SalesHeader: Record "Sales Header";
+  NoOfRecords: Integer;
+begin
+  Customer.Get('10000');
+  SalesHeader.SetRange("Sell-to Customer No.",Customer."No.");
+  SalesHeader.SetRange("Document Type",Enum::"Sales Document 
+Type"::Order);
+ if SalesHeader.IsEmpty then
+    begin
+    …
+    end;
+end;
+
+or
+
+var
+  Customer: Record Customer;
+  SalesHeader: Record "Sales Header";
+  NoOfRecords: Integer;
+begin
+  Customer.Get('10000');
+  SalesHeader.SetRange("Sell-to Customer No.",Customer."No.");
+  SalesHeader.SetRange("Document Type",Enum::"Sales Document 
+Type"::Order);
+ if not SalesHeader.IsEmpty then
+   begin
+   …
+   end;
+end;
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Show Messages and Errors
+------------------------
+-Using the Message() method displays a message to the user.
+-Using the Error() method displays an error to the user.
+-in both methods you can use the word replacement as %1, %2 etc.
+
+for example :
+
+var
+ Customer: Record Customer;
+ CustomerNameMsg: Label 'Customer Name is %1.', Comment = '%1 - customer name';
+begin
+ Customer.Get('10000');
+ Message(CustomerNameMsg,Customer.Name);
+end;
+
+-The above example shows a message with the customer's name.
+
+var
+ Customer: Record Customer;
+ CustomerNameErr: Label 'Customer Name is %1.', Comment = '%1 - customer name';
+begin
+ Customer.Get('10000');
+ Error(CustomerNameMsg,Customer.Name);
+end;
+ -The above example shows an error with the customer name.
+
+Operations on Records
+- it is possible to do operations on the records such as insert, modify and delete.
+
+Assigning a value to the table filed
+------------------------------------
+
+-There are two basic methods to assign a value to the field in a table :
+1.Init() : This method is used for when you wish to write to the database a new record.
+2.Insert() : This method is used for when inserting the values to the fields after using init().
+
+For Example :
+
+var
+  Customer: Record Customer;
+  MyName, MyAddress : Text[100];
+begin
+  Customer.Init();
+  Customer.Name := MyName;
+  Customer.Address := MyAddress;
+  Customer.Insert();
+end;
+
+-If you insert a record that has a primary key that already exists in the table you will get an error.
+
+Modifying data
+--------------
+-There are two basic methods that can be used to modify data that exists on the table.
+
+1.Modify() : used to edit a singular record from the database. This method works hand in hand with FindFirst(), FindLast(), FindSet() or Get() which is used to find a specific record. For example :
+
+var
+  Customer: Record Customer;
+  MyName, MyAddress : Text[100];
+begin
+  Customer.Get('10000');
+  Customer.Name := MyName;
+  Customer.Address := MyAddress;
+  Customer.Modify(true);
+end;
+
+-The above example gets the Customer with the number 10000, modify the Name and Address fields,and trigger which is in OnModify in the Customer Table.
+
+2.ModifyAll() : used to edit all records from the database. This method works hand in hand with SetFilter() or SetRange() as these methods retrieve a series of records. For example :
+
+var
+  Customer: Record Customer;
+  MyPaymentCode, MyCountryCode : Code[10];
+begin
+  Customer.SetRange("Country/Region Code", MyCountryCode);
+  Customer.ModifyAll("Payment Method Code", MyPaymentCode, true);
+end; 
+
+-The above example filters all Customers for a specific Country and modifies all records with a new Payment Method. It also runs the trigger onModify() of the Customer table. 
+
+Deleting Data
+-------------
+-There are two basic methods that can be used to delete existing data from the database.
+
+1.Delete() : This method deletes a specific record from the database. This method works best with FindFirst(), FindLast(), FindSet() or Get(). For Example :
+
+var
+  Customer: Record Customer;
+begin
+  Customer.Get('10000');
+  Customer.Delete(true);
+end;
+
+-The above example gets the Customer with the number 10000, deletes it, and triggers which are in OnDelete in the Customer Table.
+
+2.DeleteAll() : This method deletes a series of records from the database. This method works best with SetFilter() or SetRange() to get a specific series of records to delete.
+
+var
+  Customer: Record Customer;
+  MyCountryCode : Code[10];
+begin
+  Customer.SetRange("Country/Region Code", MyCountryCode);
+  Customer.DeleteAll();
+end;
+
+-Above example filter all Customers for a specific Country and delete all. It also runs the trigger onDelete() of the Customer table.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Codeunit Overview
+-----------------
+-A codeunit is an object which allows you to write a code that will be executed. onRun() is usually used to trigger the runtime instance of the code.
+
+-You can create procedures within the codeunit.
+
+Even Publishers and subscribers
+-------------------------------
+-An event publisher is a method that defines a trigger point in the code. Other objects can subscribe to this event and execute additional logic when it occurs. To create a publisher, use the [Event] attribute inside a codeunit For example :
+
+codeunit 50100 MyEventPublisher
+{
+    [Event(false, false)]
+    procedure OnBeforeCalculateDiscount(CustomerNo: Code[20]; var Discount: Decimal)
+    begin
+        // This event is published but does nothing on its own
+    end;
+}
+
+
+-An event subscriber is a method that listens for a published event and executes code when the event occurs. To subscribe to an event, use the [EventSubscriber] attribute in a codeunit for example :
+
+codeunit 50101 MyEventSubscriber
+{
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::MyEventPublisher, 'OnBeforeCalculateDiscount', '', false, false)]
+    procedure ApplySpecialDiscount(CustomerNo: Code[20]; var Discount: Decimal)
+    begin
+        if CustomerNo = 'CUST001' then
+            Discount := Discount + 5; // Increase discount for this customer
+    end;
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Automate Tests Overview
+-----------------------
+-The automated tests are the tests that can be run multiple times to check if the code which has been written is matching the requirements.
+
+-Can be written in the same language.
+
+-They only need to be written once and can be run multiple times as you wish.
+
+-They are used to test functionality on a basis.
+
+-Tests can be run in Business Central AL Test Tool
+
+-Each test is written as 1 procedure
+
+Test Structure
+--------------
+The automated test contains the below sections: 
+• [SCENARIO] - describe the purpose of the test.
+• [GIVEN] - responsible for the basic data which needs to be present in the system before executing the test.
+• [WHEN] - describe the action which is tested.
+• [THEN] - describes the expected result of the test.
+
+-These are comments to be added into the tests and are not actual syntax of the AL language.
+
+Test Libraries
+--------------
+-These are dependencies that are added into the project to run the unit tests with.
+-These must be data agnostic meaning the tests should run for any needed given point.
+-All libraries are codeunits and contain procedures.
+-Here are a few library examples :
+
+Library - Sales : Contains functions related to Customers and Sales Documents.
+Library - Purchase  : Contains functions related to Vendors and Purchase Documents.
+Library - Inventory : Contains functions related to items.
+Library - Warehouse : Contains functions related to Locations and Warehouse Documents.
+Library - Random    : Contains functions related that allows the creation of random data.
+Library - utility   : Contains functions related to the number of series.
+
+-Library assert : allows comparing the results of expected values and current values in the system.
+
+-If an error is expected in a certain line or instance of the code its advised to use asserterror.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Reports Overview
+----------------
+-A report is an object where you can present data from multiple tables.
+-They are used to show the data in a custom way but also to print documents.
+-When developing the report you can choose the layout based on word, excel or RDLC template.
+
+A report in the AL language contains :
+✓ Report properties
+✓ Dataitems with columns
+✓ Report triggers
+✓ Global variables
+✓ Request page
+
+Report Properties
+-----------------
+These are the properties that are present within a report :
+
+-ApplicationArea : This is a mandatory property that sets the visibility for the system.
+-Caption : Caption of the report (in other words is the label).
+-DefaultLayout : Defines the report format (Word, Excel or RDLC Layout).
+-RDLCLayout : Represents the RDLC layout for the DefaultLayout.
+ WordLayout : Represents the Word layout for the DefaultLayout.
+ ExcelLayout : Represents the Excel layout for the DefaultLayout.
+-UsageCategory : Sets if the report to be visible from the Tell Me functionality.
+-ProcessingOnly : Sets if the report shows any layout or only for processing the data.
+
+Dataitems and Columns
+---------------------
+-Dataitems represent the set of records from the table.
+-The columns in the dataitems represent the fields from the table.
+-Globally assigned variables can be placed in the dataitem columns.
+
+-To filter records in a report, use DataItemLink to connect dataitems. This ensures that only related records are processed. For example, linking Sales Header to Sales Lines by matching Document No. with No. ensures only relevant sales lines are shown per header.
+
+-Here are some properties that can be used :
+
+RequestFilterFields : Used to define the filters for the user to use.
+
+DataItemTableView : Used to set the sorting and filters for the dataitems.If you define DataItemTableView but you will not define RequestFilterFields then the dataitem is not shown at all on the requested page. It means that the user cannot add filters for this dataitem.
+
+PrintOnlyIfDetail : Used to determine if the parent dataitems should be shown if the child dataitems does not have any records.
+
+Three triggers can be used :
+
+-OnPreDataItem() : This is used before the dataitems are retrieved and can only can be accessed once the dataitems are accessed. Additionally filters can be used such as SetRange() and SetFilter() to alter the filters.
+
+-OnAfterGetRecord() : Used to calculate some data and is used on each record set.
+
+-OnPostDataItem() : Used when exiting from the dataitem.
+
+Report Triggers
+---------------
+There are 3 main triggers that can be used in a report :
+
+-OnInitReport() : Runs before the request page opens.
+
+-OnPreReport() : Runs after the request page closes but before processing data.
+
+-OnPostReport() : Runs after the dataset is generated.
+
+Request Page
+------------
+- A request page is a special page in a report that appears when the report is opened. It allows users to set options before running the report. Like standard pages, it supports controls and triggers but usually contains only global variables and is not linked to a table.
+
+CalcSums()
+----------
+-To calculate the sum of a record set in AL, you can use CalcSums() instead of a repeat...until loop. By setting filters on a record variable and running CalcSums() on a numeric field, you get the total sum of that field across all filtered records.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+WorkDate, Today, Time and CurrentDateTime
+-----------------------------------------
+Workdate : a returning function that returns the working date that was set as the work date setting.
+Today : Returns the current date and time.
+Time : returns the current time.
+CurrentDateTime : a specialized method that returns both the current date and time.
+Date : returns the current date.
+DateTime : a specialized field type that formats the date and time.
+
+CalcFields
+----------
+-In CALCFIELDS, a special type of field called FlowField can be added to show values from different tables, like displaying a Customer Name based on the Customer Number. However, it doesn't recalculate automatically when the value is typed. To recalculate, the CalcFields() method should be used during field validation.
+
+-For the DrillDown property on a page field, when a FlowField is defined, it appears as a hover to display related data (e.g., showing a customer list based on the Customer Name). If you don't want the field to navigate users to a different record, set the DrillDown property to false.
+
+Notes and Links
+---------------
+Notes :
+-Purpose: Notes are used to add free-text comments or information related to records or objects in the system. They allow users to document specific details, instructions, or context that are important for the record.
+
+-Usage: Notes can be added to various records (e.g., customers, vendors, or orders) to provide additional context or communication. For example, a note could be added to a customer record to specify special instructions or remarks.
+
+-How to use in AL: In AL, you can use the Notes table to manage these types of comments. A Note can be linked to a record, and you can also define actions to add or view notes.
+
+Links:
+-Purpose: Links are used to connect records in Business Central with external resources, websites, or files. They provide a way to create associations with external documents, such as a URL to a website, a file path, or a link to another system.
+
+-Usage: Links can be used to associate a record with additional content, like linking a customer to their external website or attaching a file that provides further information.
+
+-How to use in AL: In AL, the Links table allows you to define and manage links for records, typically through fields like URLs or file paths. You can also create actions that allow users to easily access or open linked resources.
+
+In short, Notes are for internal comments or information within the system, while Links are for connecting external resources or files to records in Business Central.
+
+Using Number of Series
+----------------------
+-In Business Central, records like Customer, Item, Vendor, and documents like Sales Orders or Purchase Invoices use Number Series instead of a simple integer for the Number field.
+ 
+-Number Series allow for alphanumeric values and special characters. The specific Number Series for each card or document is defined in setup tables, such as Sales & Receivable Setup or Inventory Setup.
+
+-The visibility of the No. field across cards and documents depends on the Number Series. If a Number Series is not configured or allows manual numbers, the No. field will be hidden. If the field is visible, the AssistEdit property enables users to select the related Number Series.
+
+Rec and xRec
+------------
+-In AL code, to get the current value of a field, you can simply use the field name (e.g., "No.") or prefix it with Rec (e.g., Rec."No."). To access the value of the field before it was modified, use xRec instead of Rec. For example, xRec."No." will give you the value of the "No." field before any changes.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Navertica CC SA
+---------------
+MainApp - This is where you will find the main app files/data. Update your App.json and .vscode/launch.json with the correct settings to ensure you test the application or run it on the testing server.
+
+TestApp - This is the folder with the Test app for the Main app. Create new test codeunits in the Test folder and register new codeunits in the installation codeunit in the Src folder (add line like  RegisterTestCodeunit(xxx) in OnInstallAppPerCompany function).
+
+When creating a project : 
+-------------------------
+1. Create a project and select "BC Agile Customer Project" template.
+2. In project settings - Permissions create new group "CentralProject" and add user "Project Collection Build Service (navertica)" into it.
+3. Set the permissions on the group to "View Project-Level information = true".
+4. In repository settings set the permissions set from the "CentralProject" group to "Create Repository = true"
+"Edit Profiles = true"
+"Read = true"
+5. In pipeline settings - Agent pools add these 2 existing pools : "BC", "BC_QA".
+6. In both the bools set the "Grant Access Permission to all Pipelines" and set the "CentralProject" group as a User.
+7. Create a service connection "NVRDevOps" to subscription NVR 365 CSP.
+8. In azure portal on the NVRDevOps KeyVault add user "navertica-projectname-guid" into Access Policies Get, List on Secrets.
+9. In the Azure DevOps in Pipeline\Library create new Variable Groups :
+- "Signature Certificate" - Add "CertPassword" and "CertPath" from the "NVR 365 CSP" subscription and "NVRDevOpsKeyVault" Key Vault. Setup "Pipeline permissions".
+
+- "SaaSPublishingVariables" - Add "NVRAppSecret" and "NVRAppID" from "NVR 365 CSP" subscription and "NVRDevOpsKeyVault" key vault. Setup "Pipeline permissions" to "No restrictions".
+
+10. In pipeline\Environments add envitonments xxx_Live and xxx_Test (xxx replace by customer name) with none resources.
+-in the security settings of these environments change "Project Valid Users" role to "User" and save it.
+
+11. In security settings of these environments change "Project Valid Users" role to "User" and save it.
+
+12. In "Project settings" go to "Service Connections" and in "NVR 365 CSP" setup "Pipeline permissions" to "No restrictions".
+
+13. Ensure policies in the repository are set accordingly. (Please visit https://navertica.visualstudio.com/BusinessCentral/_wiki/wikis/BusinessCentral.wiki/451/Create-New-Customer-Project).
+
+14. Ensure within policies set default branch as protected with the appropriate settings. (Please visit https://navertica.visualstudio.com/BusinessCentral/_wiki/wikis/BusinessCentral.wiki/451/Create-New-Customer-Project).
+
+15. In permissions add new Group "juniorDev" with the appropriate settings. (Please visit https://navertica.visualstudio.com/BusinessCentral/_wiki/wikis/BusinessCentral.wiki/451/Create-New-Customer-Project).
+
+Code Review
+-----------
+1. Reviewer and author are responsible for approved code in these points together.
+
+2. Check changes in non-code files like workspace, app.json, ruleset, settings.json, AppSourceCop.json etc.
+a. Change of version if public interface/function/object changed or compatibility issue fixed.
+
+3. Check readability of the code.
+a. Short Functions.
+b. function/variable naming is clear and in line with code inside.
+c. format of the code (visual check of readability).
+
+4. Check performance of the code.
+a. Usage of Set/AddLoadFields.
+b. Usage of SetAutoCalcFields instead of CalcFields.
+c. Usage of Find/FindSet for loops, FindFirst/ Last only without loop.
+d. Usage of isEmpty to check if something exists.
+e. Index for filtered field exists.
+f. Index for fields used to filter in calcformula for FlowFields exists.
+g. Usage of SumIndexField or IncludedColumn when Flowfield of type SUM is used.
+h. Usage of query instead loopyloop things.
+i. Usage of IsolationLevel::ReadUncommitted and ReadCommitted before isEmpty or FindXXX (since BCv23).
+
+5. Check extensibility of the code.
+a. Existence of events.
+b. Extensibility of Case statement.
+c. Usage of Interface when multiple types are processed.
+d. Dependency direction (Low level concern depends on High level concern/business rules, Specific or generic, unstable or stable etc.).
+
+Pipeline Failure Troubleshooting Guide
+--------------------------------------
+1. Install Modules – Check the Initialize Job step for the agent running the job. Restart the agent if needed (see "Restarting Agent" section).
+
+2. Get Artifact URL from WI – Ensure the Application WI has the correct Repository URL and is in an "Active" state. Check if the Application has a parent Epic WI linked to a Development Environment WI.
+
+3. Compile Apps – Analyze error messages. Issues may arise due to:
+
+- Incorrect dependency versions → Update app.json to match the correct version.
+- Missing .NET DLLs → Place them in \dev-host\shared\DotNet\.
+
+4. Create Container – Review error messages:
+
+- Check artifact versions and localization codes (e.g., 17.0, w1).
+- Corrupted artifacts? Clear c:\bcartifacts.cache on the agent and re-run the pipeline.
+
+5. Publish App to Container – Issues may include:
+
+- Dependency errors → Ensure all dependencies are installed and compatible with the BC version.
+- QA deployment failure → The dependent pipeline must complete first.
+- Sync errors → Could be a breaking change in the app.
+
+6. Push NuGet – Common failure: Package already exists (e.g., after a job re-run). Solution: Create a new build.
+
+7. Restarting Agents –
+
+- Try updating the agent via Settings → Agent pools.
+- Restart the agent (except for DEV-HOST agents).
+- If all else fails, disable the agent.
+
+Summary of BC App Translation Process
+-------------------------------------
+Translation Files:
+
+- Location: \\devel\Packages\_BCApps\Translations (inside each app’s subfolder).
+- File Types:
+- *.cs-CZ.xlf – Language translation file (e.g., Czech).
+- *.Test.*.xlf – For test apps (ignore).
+- *.g.xlf – Original English file (ignore).
+- If a required language file is missing, request it from the developers.
+
+Translation Steps:
+
+1. Copy the translation file of the current app version locally.
+2. Open it in a multilingual editor.
+3. Translate the Target texts, especially those marked [NAB: NOT TRANSLATED].
+4. Use Comments for context (e.g., if it's a caption).
+5. Send the translated file to the responsible developer.
+6. Developer updates the app translation.
+7. Complete the translation quickly or inform the developer to avoid conflicts.
+
+Recommended Editors:
+
+- Microsoft Multilingual Editor
+- Poedit.net (offers translation memory & checks; Pro version provides online suggestions)
+- Virtaal (simple, with translation memory & suggestions)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Microsoft Learning Paths:
+-------------------------
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Microsoft Developer Documents: https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/developer/devenv-dev-overview
+------------------------------
