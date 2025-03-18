@@ -1,0 +1,16 @@
+{
+    "name": "RULES",
+    "description" : "Christiaan Training Rules",
+    "rules":[
+        {
+            "id": "AA0215",
+            "action": "Hidden",
+            "justification" : "not needed"
+        },
+        {
+            "id" : "AW0009",
+            "action" : "Hidden",
+            "justification" : "not needed"
+        }
+    ]
+}

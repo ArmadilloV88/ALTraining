@@ -30,8 +30,9 @@ report 60157 "My Batch"
         {
             area(Content)
             {
-                field(Test;Test)
+                field(Test;TestValue)
                 {
+                    ToolTip = 'Shows the test value';
                     ApplicationArea = All;
                     Caption = 'Test Thing';
                 }
@@ -45,5 +46,5 @@ report 60157 "My Batch"
         }
     }
     var
-        Test : Text;
+        TestValue : Text;
 }

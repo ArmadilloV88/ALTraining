@@ -4,6 +4,7 @@ pageextension 60155 "JSON" extends "Sales Order"
     actions {
         addfirst(processing) {
             action(ShowJson) {
+                ToolTip = 'Shows the json object';
                 // Button caption shown in UI
                 Caption = 'Show JSON'; // The label text that appears on the button
 
@@ -71,7 +72,7 @@ pageextension 60155 "JSON" extends "Sales Order"
                         obj.Get('Items',Token); // Get the "Items" array as a token
 
                         // Loop through each element in the "Items" array
-                        foreach T2 in Token.AsArray() do begin
+                        foreach T2 in Token.AsArray() do 
                             // Check if the current element is an object
                             if T2.IsObject() then begin
                                 O2 := T2.AsObject(); // Cast token to object
@@ -81,8 +82,7 @@ pageextension 60155 "JSON" extends "Sales Order"
                                     V := T3.AsValue(); // Cast to JSON value
 
                                 // Display a message showing the "No" value + 5 days (date calculation)
-                                Message('Value as Code %1',CalcDate('+5D', V.AsDate()));
-                            end;
+                                Message('Value as Code %1',CalcDate('<+5D>', V.AsDate()));
                         end;
                     end;
 

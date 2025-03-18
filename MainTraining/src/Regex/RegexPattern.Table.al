@@ -111,11 +111,11 @@ table 60160 "RegEx Pattern"
 
     procedure InsertRec(R: Text[250]; D: Text[250])
     var
-        Regex: Record "RegEx Pattern";
+        RegExRecord: Record "RegEx Pattern";
     begin
-        Regex.INIT;
-        Regex.RegEx := R;
-        Regex.Description := D;
-        if Regex.Insert() then;
+        RegExRecord.INIT();
+        RegExRecord.RegEx := R;
+        RegExRecord.Description := D;
+        if RegExRecord.Insert() then;
     end;
 }

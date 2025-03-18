@@ -10,7 +10,7 @@
         "server": "https://CVRDev.dev.navertica.com",
         "serverInstance": "BC",
         "authentication": "AAD",
-        "startupObjectId": 60163,
+        "startupObjectId": 22,
         "startupObjectType": "Page",
         "breakOnError": true,
         "launchBrowser": true,

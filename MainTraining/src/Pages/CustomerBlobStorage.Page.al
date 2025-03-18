@@ -11,11 +11,13 @@ page 60152 "Customer Blob Storage Page"
         {
                 field(PKEY; Rec.PKEY)
                 {
+                    ToolTip = 'Shows the Primary Key';
                     ApplicationArea = All;
             
                 }
-                field(B; Rec.BLOB){
-
+                field(B; Rec.BLOB)
+                {
+                    ToolTip = 'Shows the blob storage';
                     ApplicationArea = All;
                 }
         }
@@ -26,6 +28,7 @@ page 60152 "Customer Blob Storage Page"
         area(Processing)
         {
             action(Import){
+                ToolTip = 'Allows the importation of data to the blob';
                 Caption = 'Import';
                 ApplicationArea = All;
                 Promoted = true;
@@ -50,6 +53,7 @@ page 60152 "Customer Blob Storage Page"
                 end;
             }
             action(Import2){
+                ToolTip = 'Allows the importation of data to the blob (Persistent blob type)';
                 Caption = 'Import into Persistent';
                 ApplicationArea = All;
                 Promoted = true;
@@ -60,7 +64,7 @@ page 60152 "Customer Blob Storage Page"
                 trigger OnAction()
                 var
                     InS: InStream;
-                    OutS: OutStream;
+                    //OutS: OutStream;
                     FileName: Text;
                     PNo : BigInteger;
                 begin
@@ -73,6 +77,8 @@ page 60152 "Customer Blob Storage Page"
                 end;
             }
             action(Import3){
+                Image = Import;
+                ToolTip = 'Allows the importation of data to the blob (From persistent blob)';
                 Caption = 'From Persistent';
                 ApplicationArea = All;
                 Promoted = true;
@@ -99,7 +105,7 @@ page 60152 "Customer Blob Storage Page"
     end;
     var
         TempBlob: Codeunit "Temp Blob";
-        TempBlob2: Codeunit "Temp Blob List";
-        BlobList: Codeunit "Temp Blob List";
+        //TempBlob2: Codeunit "Temp Blob List";
+        //BlobList: Codeunit "Temp Blob List";
         Persistant: Codeunit "Persistent Blob";
 }
