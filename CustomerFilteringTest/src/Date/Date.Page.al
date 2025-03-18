@@ -1,5 +1,7 @@
 page 60154 "Date Virtual"
 {
+    UsageCategory = Administration;
+    ApplicationArea = All;
     PageType = List;
     SourceTable = Date;
     SourceTableView = where("Period Type" = const(Month));

@@ -1,6 +1,8 @@
 page 60162 "Patterns"
 {
     //Code has been extracted from Erik Hougaard : https://github.com/hougaard/Youtube-Video-Sources/tree/master/Regex
+    UsageCategory = Administration;
+    ApplicationArea = All;
     PageType = List;
     SourceTable = "RegEx Pattern";
     Editable = false;
