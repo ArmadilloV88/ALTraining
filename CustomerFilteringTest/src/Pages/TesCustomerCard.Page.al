@@ -1,5 +1,6 @@
 page 60163 "Test Customer Card"
 {
+    //set "startupObjectId": 60163 in launch.json
     PageType = Card;
     ApplicationArea = All;
     UsageCategory = Administration;
@@ -64,7 +65,6 @@ page 60163 "Test Customer Card"
     begin
         exit(20250218D);
     end;
-
     var 
         Label : Label 'Press me';
 }
