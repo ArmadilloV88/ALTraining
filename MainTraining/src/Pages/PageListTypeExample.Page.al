@@ -47,5 +47,12 @@ page 60173 "List Page Example"
                 }
             }
         }
+        area(FactBoxes)
+        {
+            part(Stat; "Customer Details FactBox")
+            {
+                SubPageLink = "No." = field("Customer No.");
+            }
+        }
     }
 }

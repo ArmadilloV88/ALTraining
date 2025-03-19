@@ -45,7 +45,7 @@ page 60175 "Worksheet Page Example"
                     ToolTip = 'Remaining Amount';
                     ApplicationArea = All;
                 }
-            }
+            }    
         }
     }
 }
