@@ -65,11 +65,11 @@ All these functions are integrated into a **centralized system**, improving effi
 
 With the **Business Central Setup**, you can:
 
-- Install different components on separate computers.
-- Choose from a selection of predefined installation options, or create a custom configuration tailored to your needs.
-- Preconfigure components before installation to streamline the process.
-- Create, save, or load setup configuration files that capture your selected components and settings.
-- Use setup to install software and create custom deployments that can be distributed to multiple users within an organization.
+-➕ Install different components on separate computers.
+-➕ Choose from a selection of predefined installation options, or create a custom configuration tailored to your needs.
+-➕ Preconfigure components before installation to streamline the process.
+-➕ Create, save, or load setup configuration files that capture your selected components and settings.
+-➕ Use setup to install software and create custom deployments that can be distributed to multiple users within an organization.
 
 ---
 
