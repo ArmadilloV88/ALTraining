@@ -52,6 +52,7 @@ page 60173 "List Page Example"
             part(Stat; "Customer Details FactBox")
             {
                 SubPageLink = "No." = field("Customer No.");
+                ApplicationArea = All;
             }
         }
     }
