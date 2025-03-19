@@ -290,7 +290,7 @@ table 50100 MyTable
         field(3; CreatedAt; DateTime) { }
     }
 }
-```al
+```
 ---
 
 ## Enums
