@@ -1,0 +1,40 @@
+{
+    "folder-color.pathColors": [
+        {
+            "folderPath": "ALTraining\\MainTraining\\src\\",
+            "color": "foldercolorizer.color_00cc00"
+        },
+        {
+            "folderPath": "ALTraining\\MainTraining\\res\\",
+            "color": "foldercolorizer.color_cc6600"
+        },
+        {
+            "folderPath": "ALTraining\\MainTraining\\.vscode\\",
+            "color": "foldercolorizer.color_000066"
+        },
+        {
+            "folderPath": "ALTraining\\MainTraining\\alrules.json\\",
+            "color": "foldercolorizer.color_ffcc00"
+        },
+        {
+            "folderPath": "ALTraining\\MainTraining\\app.json\\",
+            "color": "foldercolorizer.color_ffcc00"
+        },
+        {
+            "folderPath": "ALTraining\\MainTraining\\",
+            "badge": "🔧"
+        },
+        {
+            "folderPath": "ALTraining\\MainTraining\\.alpackages\\",
+            "color": "foldercolorizer.color_660000"
+        },
+        {
+            "folderPath": "ALTraining\\MainTraining\\Christiaan @ Navertica_MainTraining_1.0.0.0.app\\",
+            "color": "foldercolorizer.color_00cccc"
+        },
+        {
+            "folderPath": "ALTraining\\README.md\\",
+            "color": "foldercolorizer.color_ffff66"
+        }
+    ]
+}
