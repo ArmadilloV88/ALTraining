@@ -35,6 +35,21 @@
         {
             "folderPath": "ALTraining\\README.md\\",
             "color": "foldercolorizer.color_ffff66"
+        },
+        {
+            "folderPath": "ALTraining\\BonusExtension_Tests\\",
+            "color": "foldercolorizer.color_660000",
+            "badge": "🆚"
+        },
+        {
+            "folderPath": "ALTraining\\BonusCalculationExt\\",
+            "color": "foldercolorizer.color_33cc33",
+            "badge": "🟢"
+        },
+        {
+            "folderPath": "ALTrainingExtention\\",
+            "color": "foldercolorizer.color_6600ff",
+            "badge": "🟣"
         }
     ]
 }
