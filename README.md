@@ -8,11 +8,11 @@ Training Notes :
 Microsoft Dynamics 365 Business Central is an **Enterprise Resource Planning (ERP)** solution designed for **small to mid-sized businesses (SMBs)**.  
 It helps organizations manage:  
 
-💰 **Finance** 💰  
-📦 **Supply Chain** 📦  
-📊 **Sales** 📊  
-⚙️ **Operations** ⚙️  
-📞 **Customer Service** 📞  
+- 💰 **Finance** 💰  
+- 📦 **Supply Chain** 📦  
+- 📊 **Sales** 📊  
+- ⚙️ **Operations** ⚙️  
+- 📞 **Customer Service** 📞  
 
 All these functions are integrated into a **centralized system**, improving efficiency and streamlining business processes.
 
@@ -27,13 +27,13 @@ All these functions are integrated into a **centralized system**, improving effi
 ## Difference Between On-Premise and Online Deployment  
 
 ## **Online Deployment (Cloud)**  
-✅ Hosted on **Microsoft Azure**  
-✅ No need for a **dedicated IT infrastructure**  
-✅ **Automated security updates & patches**  
+- ✅ Hosted on **Microsoft Azure**  
+- ✅ No need for a **dedicated IT infrastructure**  
+- ✅ **Automated security updates & patches**  
 
 ## **On-Premise Deployment**  
-✅ Hosted on the **client’s own servers**  
-✅ Best suited for businesses with a **stable IT infrastructure**  
+- ✅ Hosted on the **client’s own servers**  
+- ✅ Best suited for businesses with a **stable IT infrastructure**  
 
 ---
 
@@ -50,16 +50,16 @@ All these functions are integrated into a **centralized system**, improving effi
 | **Scalability** | Easy to Scale             | Requires IT Upgrades              |
 
 ## **Choose Cloud If:**  
-✅ Lower upfront costs with a **subscription model**  
-✅ No dedicated **IT team** for server management  
-✅ Need **remote access** & scalability  
-✅ Prefer **Microsoft handling security & backups**  
+- ✅ Lower upfront costs with a **subscription model**  
+- ✅ No dedicated **IT team** for server management  
+- ✅ Need **remote access** & scalability  
+- ✅ Prefer **Microsoft handling security & backups**  
 
 ## **Choose On-Premise If:**  
-✅ Require **full control** over data, security, & customization  
-✅ Have an **existing IT infrastructure** & staff  
-✅ Need **direct SQL access** & deeper integrations  
-✅ Prefer **manual updates** & self-hosted data  
+- ✅ Require **full control** over data, security, & customization  
+- ✅ Have an **existing IT infrastructure** & staff  
+- ✅ Need **direct SQL access** & deeper integrations  
+- ✅ Prefer **manual updates** & self-hosted data  
 ---
 ## Key Features of Setup for On-Premises Deployments
 
@@ -77,20 +77,20 @@ With the **Business Central Setup**, you can:
 
 Before proceeding with the installation of **Business Central**, consider the following:
 
-- Ensure that all previous versions of Business Central are uninstalled before installing new components.
-- All components must be from the same version and build of **Business Central** to ensure proper functionality.
-- If **SQL Server 2000** or **Microsoft SQL Server Desktop Engine (MSDE)** is installed on the computer, remove them before beginning the installation process. These database products can cause setup errors.
+- ➕ Ensure that all previous versions of Business Central are uninstalled before installing new components.
+- ➕ All components must be from the same version and build of **Business Central** to ensure proper functionality.
+- ➕ If **SQL Server 2000** or **Microsoft SQL Server Desktop Engine (MSDE)** is installed on the computer, remove them before beginning the installation process. These database products can cause setup errors.
 
 ---
 
 ## Development in AL (Application Language)
 
-**AL (Application Language)** is the primary programming language used for developing extensions, customizing business logic, and integrating **Microsoft Dynamics 365 Business Central** with other applications.
+- 📍 **AL (Application Language)** is the primary programming language used for developing extensions, customizing business logic, and integrating **Microsoft Dynamics 365 Business Central** with other applications.
 
-- **Object-Oriented 🛠️**: AL works with various objects like tables, pages, code units, and more.
-- **Event-Driven ⚡**: Event subscribers are used to modify **Business Central** without altering the core code.
-- **Cloud-Ready ☁️**: AL is designed to build extensions, rather than modifying the base application.
-- **Integrated with Azure 🔗**: AL supports telemetry, API integrations, and **Power Automate**.
+- ➕ **Object-Oriented 🛠️**: AL works with various objects like tables, pages, code units, and more.
+- ➕ **Event-Driven ⚡**: Event subscribers are used to modify **Business Central** without altering the core code.
+- ➕ **Cloud-Ready ☁️**: AL is designed to build extensions, rather than modifying the base application.
+- ➕ **Integrated with Azure 🔗**: AL supports telemetry, API integrations, and **Power Automate**.
 
 ### Key AL Objects
 
