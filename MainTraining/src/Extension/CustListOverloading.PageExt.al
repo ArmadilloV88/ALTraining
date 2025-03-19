@@ -15,7 +15,6 @@ pageextension 60171 "Cust List" extends "Customer List"
                     cs.CreateCustomer(Rec);
                     Base64.ToBase64(Rec.Name);
                 end;
-
             }
         }
     }
