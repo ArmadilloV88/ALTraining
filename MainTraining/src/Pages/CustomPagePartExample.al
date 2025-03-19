@@ -1,4 +1,4 @@
-page 60173 "List Page Example"
+page 60177 "Custom List Page Example"
 {
     PageType = List;
     ApplicationArea = All;
@@ -49,7 +49,7 @@ page 60173 "List Page Example"
         }
         area(FactBoxes)
         {
-            part(Stat; "Customer Details FactBox")
+            part(Stat; "Page Type Part Example")
             {
                 SubPageLink = "No." = field("Customer No.");
                 ApplicationArea = All;

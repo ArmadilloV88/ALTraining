@@ -1,6 +1,6 @@
-page 60173 "List Page Example"
+page 60181 "StandardDialogue Page Example"
 {
-    PageType = List;
+    PageType = StandardDialog;
     ApplicationArea = All;
     UsageCategory = Administration;
     SourceTable = "Cust. Ledger Entry";
@@ -9,7 +9,7 @@ page 60173 "List Page Example"
     {
         area(Content)
         { 
-            repeater(rep){
+            //repeater(rep){
                 field("Entry No."; Rec."Entry No.")
                 {
                     ToolTip = 'Ledger Entry Number';
@@ -45,15 +45,15 @@ page 60173 "List Page Example"
                     ToolTip = 'Remaining Amount';
                     ApplicationArea = All;
                 }
-            }
+            //}
         }
-        area(FactBoxes)
+        /*area(FactBoxes)
         {
             part(Stat; "Customer Details FactBox")
             {
                 SubPageLink = "No." = field("Customer No.");
                 ApplicationArea = All;
             }
-        }
+        }*///This wont work as there is no space for BC to process the Fact Box
     }
 }
