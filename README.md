@@ -509,41 +509,54 @@ A **procedure** is like a function – it holds reusable blocks of code to make 
 begin
 
 end;
+```
 
+```al
 local procedure MyLocalProcedure()
 begin
 
 end;
+```
 
+```al
 procedure MyGlobalProcedure()
 begin
 
 end;
+```
 
+```al
 procedure MyInternalProcedure()
 begin
 
 end;
+```
 
 - A procedure can also have **parameters**.
 
+```al
 local procedure MyLocalProcedure(Customer: Record Customer)
 begin
 
 end;
+```
 
+```al
 procedure MyGlobalProcedure(Customer: Record Customer; var SalesHeader: Record "Sales Header")
 begin
 
 end;
+```
 
 - **Overloading** is possible, meaning you can have the same procedure name but with **different** **parameters**.
 - Procedures can also **return a value**
 
+```al
 local procedure MyLocalProcedure(): Integer
 begin
     exit(10);
 end;
+```
 
 - This returns an integer of value 10.
 
@@ -582,12 +595,15 @@ In AL, variables help store data that you can use later in your code. They come 
 var
     SalesHeader: Record "Sales Header";
     NoOfCustomers, NoOfSalesOrders: Integer;
+```
 
+```al
 local procedure MyLocalProcedure()
 var
     Customer: Record Customer; // Local variable
 begin
 end;
+```
 
 ---
 
@@ -595,13 +611,14 @@ end;
 
 - Use the := to assign a variable a value.
 
+```al
+local procedure MyLocalProcedure()
 var
     NoOfCustomers: Integer;
-
-local procedure MyLocalProcedure()
 begin
     NoOfCustomers := 1;
 end;
+```
 
 ---
 
@@ -611,9 +628,10 @@ end;
 
 - When variables are of same type, you can declare them on the same line to keep the code clean.
 
+```al
 var
     TotalOrders, TotalInvoices: Integer;
-
+```
 ---
 
 ## Rec - Special Variable on Page and Tables
@@ -629,6 +647,7 @@ begin
         // Your code here
     end;
 end;
+```
 
 ---
 
@@ -645,9 +664,11 @@ if Amount > 1000 then
     Message('💰 Amount is greater than 1000')
 else
     Message('💸 Amount is 1000 or less');
+```
 
 ### 🔵 **Basic `Begin...end`**
 
+```al
 if Amount > 1000 then
 begin
     Message('✅ Amount is high');
@@ -658,17 +679,20 @@ begin
     Message('⚠️ Amount is low');
     Discount := 5;  // 🎯 Apply a 5% discount
 end;
+```
 
 ---
 
 ### 🔵 **Using elseif for multiple selections**
 
+```al
 if Amount > 5000 then
     Message('🔥 Amount is greater than 5000')
 elseif Amount > 1000 then
     Message('📊 Amount is between 1001 and 5000')
 else
     Message('💼 Amount is 1000 or less');
+```
 
 ---
 
@@ -681,6 +705,6 @@ else
   ```al
   if Amount > 1000 then
       Message('✔️ Condition met');
-
+  ```
 - ✅ **negate conditions with `not`**:
 
