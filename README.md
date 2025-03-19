@@ -50,16 +50,16 @@ All these functions are integrated into a **centralized system**, improving effi
 | **Scalability** | Easy to Scale             | Requires IT Upgrades              |
 
 ### **Choose Cloud If:**  
-✔️ Lower upfront costs with a **subscription model**  
-✔️ No dedicated **IT team** for server management  
-✔️ Need **remote access** & scalability  
-✔️ Prefer **Microsoft handling security & backups**  
+✅ Lower upfront costs with a **subscription model**  
+✅ No dedicated **IT team** for server management  
+✅ Need **remote access** & scalability  
+✅ Prefer **Microsoft handling security & backups**  
 
 ### **Choose On-Premise If:**  
-✔️ Require **full control** over data, security, & customization  
-✔️ Have an **existing IT infrastructure** & staff  
-✔️ Need **direct SQL access** & deeper integrations  
-✔️ Prefer **manual updates** & self-hosted data  
+✅ Require **full control** over data, security, & customization  
+✅ Have an **existing IT infrastructure** & staff  
+✅ Need **direct SQL access** & deeper integrations  
+✅ Prefer **manual updates** & self-hosted data  
 ---
 ## Key Features of Setup for On-Premises Deployments
 
@@ -186,11 +186,11 @@ There are no mandatory practices or strict rules to follow when structuring your
 Defines a database table in Business Central. Tables store data records.
 
 ### It contains the following:
-- ✓ Table properties  
-- ✓ Set of fields  
-- ✓ Keys  
-- ✓ Global variables  
-- ✓ Table triggers  
+- ✅ Table properties  
+- ✅ Set of fields  
+- ✅ Keys  
+- ✅ Global variables  
+- ✅ Table triggers  
 
 > **Note:** Each table must have a unique number that obeys the object ID range.
 
@@ -309,11 +309,11 @@ table 50100 MyTable
 Pages allow users to interact with data by inserting, modifying, deleting data, and running custom actions.
 
 ### Pages contain:
-- ✓ Page properties  
-- ✓ Set of controls  
-- ✓ Set of actions  
-- ✓ Global variables  
-- ✓ Page triggers  
+- ✅ Page properties  
+- ✅ Set of controls  
+- ✅ Set of actions  
+- ✅ Global variables  
+- ✅ Page triggers  
 
 ### Business Central contains different types of pages:
 
@@ -411,11 +411,11 @@ You can code special actions to perform operations such as opening a new page, r
 
 A **Table Extension** allows you to modify a standard table. It can include:
 
-- ✓ Properties  
-- ✓ Fields  
-- ✓ Keys  
-- ✓ Global variables  
-- ✓ Table extension triggers  
+- ✅ Properties  
+- ✅ Fields  
+- ✅ Keys  
+- ✅ Global variables  
+- ✅ Table extension triggers  
 
 ### Table Extension Properties:
 - Use `Ctrl + Space` to view available properties for the standard table.
@@ -445,11 +445,11 @@ A **Table Extension** allows you to modify a standard table. It can include:
 
 A **Page Extension** allows you to modify a standard page. It can include:
 
-- ✓ Properties  
-- ✓ Controls  
-- ✓ Actions  
-- ✓ Global variables  
-- ✓ Page extension triggers  
+- ✅ Properties  
+- ✅ Controls  
+- ✅ Actions  
+- ✅ Global variables  
+- ✅ Page extension triggers  
 
 ### Page Extension Properties:
 - Use `Ctrl + Space` to view available properties for the standard page.
@@ -609,7 +609,7 @@ end;
 
 ### Assigning Variables:
 
-- Use the := to assign a variable a value.
+- Use the `:=` to assign a variable a value.
 
 ```al
 local procedure MyLocalProcedure()
