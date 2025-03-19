@@ -8,11 +8,11 @@ Training Notes :
 Microsoft Dynamics 365 Business Central is an **Enterprise Resource Planning (ERP)** solution designed for **small to mid-sized businesses (SMBs)**.  
 It helps organizations manage:  
 
-- **Finance** 💰  
-- **Supply Chain** 📦  
-- **Sales** 📊  
-- **Operations** ⚙️  
-- **Customer Service** 📞  
+💰 **Finance** 💰  
+📦 **Supply Chain** 📦  
+📊 **Sales** 📊  
+⚙️ **Operations** ⚙️  
+📞 **Customer Service** 📞  
 
 All these functions are integrated into a **centralized system**, improving efficiency and streamlining business processes.
 
