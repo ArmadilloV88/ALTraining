@@ -61,7 +61,7 @@ All these functions are integrated into a **centralized system**, improving effi
 - ✅ Need **direct SQL access** & deeper integrations  
 - ✅ Prefer **manual updates** & self-hosted data  
 ---
-## Key Features of Setup for On-Premises Deployments
+## ➕ Key Features of Setup for On-Premises Deployments
 
 With the **Business Central Setup**, you can:
 
@@ -73,7 +73,7 @@ With the **Business Central Setup**, you can:
 
 ---
 
-## Installation Notes
+## ➕ Installation Notes
 
 Before proceeding with the installation of **Business Central**, consider the following:
 
@@ -83,7 +83,7 @@ Before proceeding with the installation of **Business Central**, consider the fo
 
 ---
 
-## Development in AL (Application Language)
+## 📍 Development in AL (Application Language)
 
 - 📍 **AL (Application Language)** is the primary programming language used for developing extensions, customizing business logic, and integrating **Microsoft Dynamics 365 Business Central** with other applications.
 
@@ -92,7 +92,7 @@ Before proceeding with the installation of **Business Central**, consider the fo
 - ➕ **Cloud-Ready ☁️**: AL is designed to build extensions, rather than modifying the base application.
 - ➕ **Integrated with Azure 🔗**: AL supports telemetry, API integrations, and **Power Automate**.
 
-### Key AL Objects
+### 🏷️ Key AL Objects
 
 | Object Type  | Purpose                                               |
 |--------------|-------------------------------------------------------|
@@ -105,28 +105,28 @@ Before proceeding with the installation of **Business Central**, consider the fo
 | **Interface**| Defines common methods for different objects.         |
 | **XMLPort**  | Imports or exports data in XML format.                |
 
-### AL Object Breakdown
+### 🏷️ AL Object Breakdown
 
-- **Table Objects**: Define the schema for tables that hold your data.
-- **Page Objects**: Represent the pages and interfaces seen by users.
-- **Code Units**: Contain the business logic and behavior of the application.
-- **Report Objects**: Define the layout and data used to generate reports.
+- 🏷️ **Table Objects**: Define the schema for tables that hold your data.
+- 🏷️ **Page Objects**: Represent the pages and interfaces seen by users.
+- 🏷️ **Code Units**: Contain the business logic and behavior of the application.
+- 🏷️ **Report Objects**: Define the layout and data used to generate reports.
 ---
-## Code Analytics Used
+## 🔧 Code Analytics Used
 
 Several code analyzers help ensure the quality and adherence to best practices in your **AL** code:
 
-- **CodeCop**: Provides a set of guidelines (mostly as warnings) related to the code, such as unused variables. It is highly recommended to always enable this set.
+- 🔧 **CodeCop**: Provides a set of guidelines (mostly as warnings) related to the code, such as unused variables. It is highly recommended to always enable this set.
   
-- **AppSourceCop**: Offers guidelines (mostly as errors) related to your extension if it were to be published on **AppSource** for general download by any company using **Business Central**.
+- 🔧 **AppSourceCop**: Offers guidelines (mostly as errors) related to your extension if it were to be published on **AppSource** for general download by any company using **Business Central**.
 
-- **UICop**: Focuses on guidelines for the user interface, ensuring consistency and usability.
+- 🔧 **UICop**: Focuses on guidelines for the user interface, ensuring consistency and usability.
 
-- **PerTenantExtensionCop**: Provides guidelines for extensions developed for a particular customer, ensuring the extension is tailored to their needs.
+- 🔧 **PerTenantExtensionCop**: Provides guidelines for extensions developed for a particular customer, ensuring the extension is tailored to their needs.
 
 ---
 
-## File Naming Convention
+## 🏷️ File Naming Convention
 
 Follow the naming convention to keep your project files organized and consistent:
 
