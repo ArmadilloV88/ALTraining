@@ -3,7 +3,8 @@ AL Training source code
 
 Training Notes :
 
-## 🪟 What is 365 Dynamics Business Central?  
+## 🪟 What is 365 Dynamics Business Central?
+-  
 
 Microsoft Dynamics 365 Business Central is an **Enterprise Resource Planning (ERP)** solution designed for **small to mid-sized businesses (SMBs)**.  
 It helps organizations manage:  
@@ -156,6 +157,7 @@ An affix or suffix should contain at least 3 characters to ensure unique code si
 }
 
 This ensures that there are unique code signatures in the Microsoft AppSource as it is mandatory that there must be no conflicts between apps, pages, or even tables.
+
 ---
 
 ## 🗂️ **Project Folder Structure**
