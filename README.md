@@ -26,12 +26,12 @@ All these functions are integrated into a **centralized system**, improving effi
 
 ## ✅ Difference Between On-Premise and Online Deployment  
 
-## ** ✅ Online Deployment (Cloud)**  
+## ✅**Online Deployment (Cloud)**  
 - ✅ Hosted on **Microsoft Azure**  
 - ✅ No need for a **dedicated IT infrastructure**  
 - ✅ **Automated security updates & patches**  
 
-## ** ✅ On-Premise Deployment**  
+## ✅**On-Premise Deployment**  
 - ✅ Hosted on the **client’s own servers**  
 - ✅ Best suited for businesses with a **stable IT infrastructure**  
 
