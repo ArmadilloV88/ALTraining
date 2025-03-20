@@ -295,37 +295,37 @@ table 50100 MyTable
 
 ## 🧩**Enums**
 
-- Enums are an object type that allows specifying static options.
-- To extend an Enum, you must use the `Extensible = true` property.
-- Each Enum value has a **number** and **name**, which should each have an assigned **caption**.
-- Enum values start from `0`.
-- If you want an empty Enum value, name it and set `Caption = ' '` (include the space).
-- Remember to add an affix to the Enum.
+- 🖋️ Enums are an object type that allows specifying static options.
+- 🖋️ To extend an Enum, you must use the `Extensible = true` property.
+- 🖋️ Each Enum value has a **number** and **name**, which should each have an assigned **caption**.
+- 🖋️ Enum values start from `0`.
+- 🖋️ If you want an empty Enum value, name it and set `Caption = ' '` (include the space).
+- 🖋️ Remember to add an affix to the Enum.
 
 ---
 
-## Page Overview
+## 📄**Page Overview**
 
-Pages allow users to interact with data by inserting, modifying, deleting data, and running custom actions.
+👉 Pages allow users to interact with data by inserting, modifying, deleting data, and running custom actions.
 
-### Pages contain:
+### 📄 Pages contain:
 - ✅ Page properties  
 - ✅ Set of controls  
 - ✅ Set of actions  
 - ✅ Global variables  
 - ✅ Page triggers  
 
-### Business Central contains different types of pages:
+### 📄 Business Central contains different types of pages:
 
-- **List Page**:  
+- 📄**List Page**:  
   Used when more than one record needs to be shown on the page. They are non-editable by default and commonly used in purchase orders, customers, vendors, and employees.  
   (Directories are editable though.)
 
-- **Card Page**:  
+- 📄**Card Page**:  
   Used when only one record needs to be shown. Commonly used for master data like a single customer, single record, item, or vendor.  
   These are typically editable but do not allow new inserts or deletions. They are accessible from menus or the "Tell Me" functionality.
 
-- **Document Page**:  
+- 📄**Document Page**:  
   Used when both a header and lines are needed (e.g., orders, invoices, posted invoices).  
   Typically created using two separate pages:
   - One for the **header** (main table).
@@ -333,41 +333,41 @@ Pages allow users to interact with data by inserting, modifying, deleting data, 
 
 ---
 
-## Page Properties
+## 📝**Page Properties**
 
 Each page has its own set of properties, many of which are shared across all page types, but some are specific to certain types.
 
-- **PageType**: Defines the type of page.
-- **Caption**: Caption for the page (no prefix/suffix).
-- **SourceTable**: Indicates which table’s data is presented on the page (only one table allowed).
-- **UsageCategory**: Mandatory if the page should be visible from "Tell Me" functionality.
-- **ApplicationArea**: Defines which areas of the system the page is visible in (used with `UsageCategory`).
-- **Editable**: Specifies if the page is editable. Defaults to `true`.
-- **DeleteAllowed**, **InsertAllowed**, **ModifyAllowed**: Control whether delete, insert, or modify actions are allowed. Defaults to `true`.
-- **CardPageId**: Only for list pages. Specifies which page will open as a card page for the list.
+- 📝**PageType**: Defines the type of page.
+- 📝**Caption**: Caption for the page (no prefix/suffix).
+- 📝**SourceTable**: Indicates which table’s data is presented on the page (only one table allowed).
+- 📝**UsageCategory**: Mandatory if the page should be visible from "Tell Me" functionality.
+- 📝**ApplicationArea**: Defines which areas of the system the page is visible in (used with `UsageCategory`).
+- 📝**Editable**: Specifies if the page is editable. Defaults to `true`.
+- 📝**DeleteAllowed**, **InsertAllowed**, **ModifyAllowed**: Control whether delete, insert, or modify actions are allowed. Defaults to `true`.
+- 📝**CardPageId**: Only for list pages. Specifies which page will open as a card page for the list.
 
 ---
 
-## Page Triggers
+## 📑**Page Triggers**
 
 Like tables, Pages also have triggers, but not all are commonly used.  
 You can add code to these triggers to execute when the trigger is fired.
 
-- **OnOpenPage()**: Runs when the page is opened.
-- **OnAfterGetCurrRecord()**: Retrieves the current record from the database.
+- 🚩**OnOpenPage()**: Runs when the page is opened.
+- 🚩**OnAfterGetCurrRecord()**: Retrieves the current record from the database.
 
 > 💡 It’s uncommon to put insert/modify/delete logic directly in the page triggers—better to handle that in the table layer.
 
 ---
 
-## Page Controls
+## 🕹️**Page Controls**
 
 Controls are placed in one of two areas: **Content** or **FactBox**.
 
-- In the **Content Area**, you place fields that are shown on the page:
-  - These fields are grouped using:
-    - **FastTabs** (for Card and Document pages)
-    - **Repeater** (for List pages)
+- 🕹️ In the **Content Area**, you place fields that are shown on the page:
+  - 🕹️ These fields are grouped using:
+    - 🕹️ **FastTabs** (for Card and Document pages)
+    - 🕹️ **Repeater** (for List pages)
 
 - You can't precisely control field placement on the screen—only in which **group** and **order** they appear.
 
