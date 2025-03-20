@@ -1,7 +1,7 @@
 page 60185 "Number Series Setup Page"
 {
     ApplicationArea = All;
-    Caption = 'NumberSeriesSetupPage';
+    Caption = 'Number Series Setup Page';
     PageType = Card;
     SourceTable = NumberSeriesSetup;
     UsageCategory = Administration;

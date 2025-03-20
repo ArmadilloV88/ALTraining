@@ -4,7 +4,7 @@ page 60182 "Number Series Card Page"
     ApplicationArea = All;
     UsageCategory = Administration;
     SourceTable = "Number Series Table";
-    
+    //DelayedInsert = false;
     layout
     {
         area(Content)
