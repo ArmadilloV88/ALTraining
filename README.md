@@ -212,71 +212,71 @@ Defines a database table in Business Central. Tables store data records.
 
 Allows you to add code directly to the table. There are 4 main triggers:
 
-- **OnInsert()** - Used for inserting data into the table.
-- **OnModify()** - Used to modify existing data and save it to the table.
-- **OnDelete()** - Used to remove/delete a record/data from the table.
-- **OnRename()** - Used when changing primary key attributes in the table.
+- 🚩**OnInsert()** - Used for inserting data into the table.
+- 🚩**OnModify()** - Used to modify existing data and save it to the table.
+- 🚩**OnDelete()** - Used to remove/delete a record/data from the table.
+- 🚩**OnRename()** - Used when changing primary key attributes in the table.
 
 ---
 
-## Table Fields
+## 📊**Table Fields**
 
-- **Editable** - Determines if a field is editable or not.
+- ➡️**Editable** - Determines if a field is editable or not.
 
-- **Code** - An alphanumeric field used mostly for storing unique values, automatically converts to uppercase. Using the `NotBlank` property forces input.
+- ➡️**Code** - An alphanumeric field used mostly for storing unique values, automatically converts to uppercase. Using the `NotBlank` property forces input.
 
-- **Text** - String-based attribute used to store descriptions or addresses, typically with a length of 100 to 2048 characters. Using the `TableRelation` property allows lookup of values outside the current table.
+- ➡️**Text** - String-based attribute used to store descriptions or addresses, typically with a length of 100 to 2048 characters. Using the `TableRelation` property allows lookup of values outside the current table.
 
-- **Date** - Attribute used to store date-like formats.
+- ➡️**Date** - Attribute used to store date-like formats.
 
-- **Integer** - Numerical field that stores whole numbers.  
+- ➡️**Integer** - Numerical field that stores whole numbers.  
   - Using the `BlankZero` property will show an empty value instead of zero.  
   - You can also use `MinValue` and `MaxValue` properties to set ranges.
 
-- **Decimal** - Numerical field that stores decimal numbers.  
+- ➡️**Decimal** - Numerical field that stores decimal numbers.  
   - Using the `DecimalPlaces` property will set the minimum and maximum number of decimal places.
 
-- **Enum** - Shows a list of options defined in a separate object. Ensure you specify which Enum you would like to use.
+- ➡️**Enum** - Shows a list of options defined in a separate object. Ensure you specify which Enum you would like to use.
 
 ---
 
-## Field Triggers
+## 🚩**Field Triggers**
 
-- **OnLookup()** - Allows you to add code when a user clicks on the page lookup function.
-- **OnValidate()** - This triggers when a user inputs a value in the field.
+- ➡️**OnLookup()** - Allows you to add code when a user clicks on the page lookup function.
+- ➡️**OnValidate()** - This triggers when a user inputs a value in the field.
 
 ---
 
-## Flow Fields
+## 📊**Flow Fields**
 
-- These are a special class of fields that can be set with the `FieldClass` property, allowing mathematical operations such as `Count`, `Sum`, `Max`, `Min`. They also allow you to:
-  - Show values from a different table
-  - Check if a record exists (similar to a Boolean return)
+- 📌 These are a special class of fields that can be set with the `FieldClass` property, allowing mathematical operations such as `Count`, `Sum`, `Max`, `Min`. They also allow you to:
+- 📌 Show values from a different table
+- 📌 Check if a record exists (similar to a Boolean return)
 
-- Use the `CalcFormula` property to specify what the FlowField should display.
+- 📌 Use the `CalcFormula` property to specify what the FlowField should display.
 
 > **Note:** These fields must always have the `Editable = false` property set.
 
 ---
 
-## Table Keys
+## 📊**Table Keys**
 
-- Each table must have at least **one primary key** defined, but you can define more if needed.  
+- 📌 Each table must have at least **one primary key** defined, but you can define more if needed.  
   (Make sure to include **'PK'** in the name, e.g., `PK_Customer_ID`)
 
-- Use the `Get()` method to retrieve specific data.
+- 📌 Use the `Get()` method to retrieve specific data.
 
 ---
 
-## Permission Sets
+## 🗝️ **Permission Sets**
 
-- Special object type that defines which permissions are included in the set.
-- `Assignable` property specifies whether the permission set can be assigned directly to users.
-- Controls whether users can **read**, **write**, **edit**, or **delete** the object.
+- 🔐 Special object type that defines which permissions are included in the set.
+- 🔐 `Assignable` property specifies whether the permission set can be assigned directly to users.
+- 🔐 Controls whether users can **read**, **write**, **edit**, or **delete** the object.
 
 ---
 
-## Table Example
+## 📊**Table Example**
 
 ```al
 table 50100 MyTable
@@ -293,7 +293,7 @@ table 50100 MyTable
 ```
 ---
 
-## Enums
+## 🧩**Enums**
 
 - Enums are an object type that allows specifying static options.
 - To extend an Enum, you must use the `Extensible = true` property.
