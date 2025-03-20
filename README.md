@@ -424,7 +424,7 @@ A 🧩**Table Extension** allows you to modify a standard table. It can include:
 ### 🧩**Table Extension Properties:**
 - Use `Ctrl + Space` to view available properties for the standard table.
 
-### Table Extension Fields:
+### ➕**Table Extension Fields:**
 - ➕ Add fields to expand the existing table.
 - ➕ You can use:
   - ➕ `OnBeforeValidate()`: Trigger code before standard validation.
@@ -434,20 +434,20 @@ A 🧩**Table Extension** allows you to modify a standard table. It can include:
   - Include the appropriate **affix**.
 - ⚠️ Some standard tables mirror data to other tables—ensure you also update related tables accordingly.
 
-### Table Extension Keys:
+### 🗝️**Table Extension Keys:**
 - You can add new keys, but **cannot** mix standard fields with custom fields in keys.
 
-### Table Extension Triggers:
-- Standard code cannot be modified, but you can add logic before or after using:
-  - `OnBeforeDelete()`
-  - `OnAfterDelete()`
-  - and similar triggers.
+### 🚩**Table Extension Triggers:**
+- 🚩 Standard code cannot be modified, but you can add logic before or after using:
+  - 🚩 `OnBeforeDelete()`
+  - 🚩 `OnAfterDelete()`
+  - 🚩 and similar triggers.
 
 ---
 
-## Page Extension Overview
+## 🚩 **Page Extension Overview**
 
-A **Page Extension** allows you to modify a standard page. It can include:
+A 📝**Page Extension** allows you to modify a standard page. It can include:
 
 - ✅ Properties  
 - ✅ Controls  
@@ -455,7 +455,7 @@ A **Page Extension** allows you to modify a standard page. It can include:
 - ✅ Global variables  
 - ✅ Page extension triggers  
 
-### Page Extension Properties:
+### 📝 **Page Extension Properties:**
 - Use `Ctrl + Space` to view available properties for the standard page.
 
 ---
