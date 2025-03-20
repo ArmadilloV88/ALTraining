@@ -158,30 +158,30 @@ An affix or suffix should contain at least 3 characters to ensure unique code si
 This ensures that there are unique code signatures in the Microsoft AppSource as it is mandatory that there must be no conflicts between apps, pages, or even tables.
 ---
 
-## Project Folder Structure
+## 🗂️ Project Folder Structure
 
 There are no mandatory practices or strict rules to follow when structuring your project folders. However, it's good practice to keep them organized and neat to ensure effective finding of certain files within a project:
 
-- **src**: Known as the source folder, which contains all files related to the functionality of the extension.
-- **res**: Known as the resources folder, which contains the logo of the extension or any other externally used resource files.
+- 🗂️ **src**: Known as the source folder, which contains all files related to the functionality of the extension.
+- 🗂️ **res**: Known as the resources folder, which contains the logo of the extension or any other externally used resource files.
 
 ---
 
-## AL Object Range
+## 📐 AL Object Range
 
-- Each (or most) objects in the database must have a unique ID number. While a table and a page can share the same ID, all other objects must have distinct IDs.
+- 📏 Each (or most) objects in the database must have a unique ID number. While a table and a page can share the same ID, all other objects must have distinct IDs.
   
-- The object range is controlled in the `app.json` file in the `idRanges` section.
+- 📐 The object range is controlled in the `app.json` file in the `idRanges` section.
 
-- The available ID range is from **50000 - 99999**.
+- 📏 The available ID range is from **50000 - 99999**.
 
-- **AppSource** range starts from **70 million**.
+- 📐 **AppSource** range starts from **70 million**.
 
 ---
 
-# AL (Application Language) Syntax
+# 📝AL (Application Language) Syntax
 
-## ttable - Table Object Structure
+## 📝ttable - Table Object Structure
 
 Defines a database table in Business Central. Tables store data records.
 
@@ -192,7 +192,7 @@ Defines a database table in Business Central. Tables store data records.
 - ✅ Global variables  
 - ✅ Table triggers  
 
-> **Note:** Each table must have a unique number that obeys the object ID range.
+> 💡 **Note:** Each table must have a unique number that obeys the object ID range.
 
 ---
 
