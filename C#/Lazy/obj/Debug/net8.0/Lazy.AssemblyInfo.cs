@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Lazy")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+17874fc5d112c336af6dbf499a56094bf8651a95")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+baa2aef2b7f7aa869d231bda1b4ad5dc6897d003")]
 [assembly: System.Reflection.AssemblyProductAttribute("Lazy")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Lazy")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

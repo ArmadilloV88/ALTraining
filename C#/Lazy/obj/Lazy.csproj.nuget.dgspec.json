@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\ccver\\Documents\\AL\\ALTraining\\C#\\Lazy\\Lazy.csproj": {}
+    "C:\\Users\\ccver\\Documents\\AL\\ALTraining\\C#\\Lazy\\Lazy.csproj": {}
   },
   "projects": {
-    "c:\\Users\\ccver\\Documents\\AL\\ALTraining\\C#\\Lazy\\Lazy.csproj": {
+    "C:\\Users\\ccver\\Documents\\AL\\ALTraining\\C#\\Lazy\\Lazy.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\ccver\\Documents\\AL\\ALTraining\\C#\\Lazy\\Lazy.csproj",
+        "projectUniqueName": "C:\\Users\\ccver\\Documents\\AL\\ALTraining\\C#\\Lazy\\Lazy.csproj",
         "projectName": "Lazy",
-        "projectPath": "c:\\Users\\ccver\\Documents\\AL\\ALTraining\\C#\\Lazy\\Lazy.csproj",
+        "projectPath": "C:\\Users\\ccver\\Documents\\AL\\ALTraining\\C#\\Lazy\\Lazy.csproj",
         "packagesPath": "C:\\Users\\ccver\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\ccver\\Documents\\AL\\ALTraining\\C#\\Lazy\\obj\\",
+        "outputPath": "C:\\Users\\ccver\\Documents\\AL\\ALTraining\\C#\\Lazy\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
