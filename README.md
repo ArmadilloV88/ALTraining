@@ -375,41 +375,43 @@ Controls are placed in one of two areas: **Content** or **FactBox**.
 
 > ⚠️ **Best practice:** Place triggers like `OnValidate()` and `OnLookup()` inside the **table**, not the **page**.
 
-### Key Control Properties:
-- **ApplicationArea**: Specifies in which part of the system the control should appear.
-- **ToolTip**: Provides users with basic help text for a field.
+---
 
-### Additional Notes:
-- You can add **part controls** to link two pages (e.g., via Document No./ID).
-- **FactBoxes**:  
-  - You can't adjust FactBox width or size.
-  - FactBoxes can show in Details or Attachments sections automatically.
-  - You can add **multiple FactBoxes** to a single page.
+### 🎛️**Key Control Properties:**
+- 👉**ApplicationArea**: Specifies in which part of the system the control should appear.
+- 👉**ToolTip**: Provides users with basic help text for a field.
+
+### 📄Additional Notes:
+- 📄 You can add **part controls** to link two pages (e.g., via Document No./ID).
+- 📄 **FactBoxes**:  
+  - 📄 You can't adjust FactBox width or size.
+  - 📄 FactBoxes can show in Details or Attachments sections automatically.
+  - 📄 You can add **multiple FactBoxes** to a single page.
 
 ---
 
-## Page Actions
+## 📝**Page Actions**
 
 You can code special actions to perform operations such as opening a new page, running a report, or executing code when an action button is clicked.
 
-### Common Action Properties:
+### 📝 Common Action Properties:
 
-- **ApplicationArea**: Mandatory; defines where the action will be available.
-- **Caption**: Specifies the label for the action.
-- **Image**: Specifies the icon/image for the action.
-- **Promoted**: Sets whether this action appears on the home page.
+- 📝**ApplicationArea**: Mandatory; defines where the action will be available.
+- 📝**Caption**: Specifies the label for the action.
+- 📝**Image**: Specifies the icon/image for the action.
+- 📝**Promoted**: Sets whether this action appears on the home page.
   - Use `PromotedOnly = true` if you want it to only appear on the home page.
   - `PromotedCategory`: Groups the promoted action into a category.
-- **RunObject**: Defines an object (Page/Enum/etc.) to run when the action is selected.
+- 📝**RunObject**: Defines an object (Page/Enum/etc.) to run when the action is selected.
   - If `RunObject` is used, **do not** add code to `OnAction()`.
   - Use `RunPageLink` to link a page to the object.
-- **ToolTip**: Mandatory if publishing to AppSource. Gives users a quick description of what the action does.
+- 📝**ToolTip**: Mandatory if publishing to AppSource. Gives users a quick description of what the action does.
 
 ---
 
-## Table Extension Overview
+## 🧩**Table Extension Overview**
 
-A **Table Extension** allows you to modify a standard table. It can include:
+A 🧩**Table Extension** allows you to modify a standard table. It can include:
 
 - ✅ Properties  
 - ✅ Fields  
@@ -417,14 +419,16 @@ A **Table Extension** allows you to modify a standard table. It can include:
 - ✅ Global variables  
 - ✅ Table extension triggers  
 
-### Table Extension Properties:
+---
+
+### 🧩**Table Extension Properties:**
 - Use `Ctrl + Space` to view available properties for the standard table.
 
 ### Table Extension Fields:
-- Add fields to expand the existing table.
-- You can use:
-  - `OnBeforeValidate()`: Trigger code before standard validation.
-  - `OnAfterValidate()`: Trigger code after standard validation.
+- ➕ Add fields to expand the existing table.
+- ➕ You can use:
+  - ➕ `OnBeforeValidate()`: Trigger code before standard validation.
+  - ➕ `OnAfterValidate()`: Trigger code after standard validation.
 - Make sure:
   - Each new field has a correct **ID/Number** according to your `app.json` range.
   - Include the appropriate **affix**.
