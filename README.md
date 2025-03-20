@@ -4,7 +4,7 @@ AL Training source code
 Training Notes :
 
 ## 🪟 What is 365 Dynamics Business Central?
--  
+--
 
 Microsoft Dynamics 365 Business Central is an **Enterprise Resource Planning (ERP)** solution designed for **small to mid-sized businesses (SMBs)**.  
 It helps organizations manage:  
