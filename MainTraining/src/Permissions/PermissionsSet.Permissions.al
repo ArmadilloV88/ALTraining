@@ -7,5 +7,6 @@ permissionset 60164 "Training Permissions"
         tabledata "Excel Test" = RMID,
         tabledata "RegEx Pattern" = RMID,
         tabledata "Number Series Table" = RMID,
+        tabledata "NumberSeriesSetup" = RMID,
         tabledata "FlowField Test Table" = RMID;
 }

@@ -28,4 +28,11 @@ table 60183 "Number Series Table"
             Clustered = true;
         }
     }
+    trigger OnInsert()
+    var
+        NoSM : Codeunit "No. Series";
+    begin
+        if No = '' then
+            No := NoSM.GetNextNo();
+    end;
 }
