@@ -4,7 +4,6 @@ AL Training source code
 Training Notes :
 
 ## 🪟 What is 365 Dynamics Business Central?
---
 
 Microsoft Dynamics 365 Business Central is an **Enterprise Resource Planning (ERP)** solution designed for **small to mid-sized businesses (SMBs)**.  
 It helps organizations manage:  
@@ -150,19 +149,19 @@ Follow the naming convention to keep your project files organized and consistent
 
 ## 📝 **Affixes and Suffixes**
 
-An affix or suffix should contain at least 3 characters to ensure unique code signatures within **AppSource**. For example:
+- An affix or suffix should contain at least 3 characters to ensure unique code signatures within **AppSource**. For example:
 
 {
   "mandatoryAffixes": ["NAV"]
 }
 
-This ensures that there are unique code signatures in the Microsoft AppSource as it is mandatory that there must be no conflicts between apps, pages, or even tables.
+- This ensures that there are unique code signatures in the Microsoft AppSource as it is mandatory that there must be no conflicts between apps, pages, or even tables.
 
 ---
 
 ## 🗂️ **Project Folder Structure**
 
-There are no mandatory practices or strict rules to follow when structuring your project folders. However, it's good practice to keep them organized and neat to ensure effective finding of certain files within a project:
+- There are no mandatory practices or strict rules to follow when structuring your project folders. However, it's good practice to keep them organized and neat to ensure effective finding of certain files within a project:
 
 - 🗂️ **src**: Known as the source folder, which contains all files related to the functionality of the extension.
 - 🗂️ **res**: Known as the resources folder, which contains the logo of the extension or any other externally used resource files.
@@ -185,7 +184,7 @@ There are no mandatory practices or strict rules to follow when structuring your
 
 ## 📝ttable - Table Object Structure
 
-Defines a database table in Business Central. Tables store data records.
+- Defines a database table in Business Central. Tables store data records.
 
 ### 📝It contains the following:
 - ✅ Table properties  
@@ -212,7 +211,7 @@ Defines a database table in Business Central. Tables store data records.
 
 ## 🚩**Table Triggers**
 
-Allows you to add code directly to the table. There are 4 main triggers:
+- Allows you to add code directly to the table. There are 4 main triggers:
 
 - 🚩**OnInsert()** - Used for inserting data into the table.
 - 🚩**OnModify()** - Used to modify existing data and save it to the table.
@@ -337,7 +336,7 @@ table 50100 MyTable
 
 ## 📝**Page Properties**
 
-Each page has its own set of properties, many of which are shared across all page types, but some are specific to certain types.
+- Each page has its own set of properties, many of which are shared across all page types, but some are specific to certain types.
 
 - 📝**PageType**: Defines the type of page.
 - 📝**Caption**: Caption for the page (no prefix/suffix).
@@ -352,8 +351,8 @@ Each page has its own set of properties, many of which are shared across all pag
 
 ## 📑**Page Triggers**
 
-Like tables, Pages also have triggers, but not all are commonly used.  
-You can add code to these triggers to execute when the trigger is fired.
+- 👉 Like tables, Pages also have triggers, but not all are commonly used.  
+- 👉 You can add code to these triggers to execute when the trigger is fired.
 
 - 🚩**OnOpenPage()**: Runs when the page is opened.
 - 🚩**OnAfterGetCurrRecord()**: Retrieves the current record from the database.
@@ -364,16 +363,16 @@ You can add code to these triggers to execute when the trigger is fired.
 
 ## 🕹️**Page Controls**
 
-Controls are placed in one of two areas: **Content** or **FactBox**.
+- 👉 Controls are placed in one of two areas: **Content** or **FactBox**.
 
 - 🕹️ In the **Content Area**, you place fields that are shown on the page:
   - 🕹️ These fields are grouped using:
     - 🕹️ **FastTabs** (for Card and Document pages)
     - 🕹️ **Repeater** (for List pages)
 
-- You can't precisely control field placement on the screen—only in which **group** and **order** they appear.
+- 👉 You can't precisely control field placement on the screen—only in which **group** and **order** they appear.
 
-- If a caption is defined on the respective table, it will be shown automatically on the pages.
+- 👉 If a caption is defined on the respective table, it will be shown automatically on the pages.
 
 > ⚠️ **Best practice:** Place triggers like `OnValidate()` and `OnLookup()` inside the **table**, not the **page**.
 
@@ -394,7 +393,7 @@ Controls are placed in one of two areas: **Content** or **FactBox**.
 
 ## 📝**Page Actions**
 
-You can code special actions to perform operations such as opening a new page, running a report, or executing code when an action button is clicked.
+- 👉 You can code special actions to perform operations such as opening a new page, running a report, or executing code when an action button is clicked.
 
 ### 📝 Common Action Properties:
 
@@ -413,7 +412,7 @@ You can code special actions to perform operations such as opening a new page, r
 
 ## 🧩**Table Extension Overview**
 
-A 🧩**Table Extension** allows you to modify a standard table. It can include:
+- A 🧩**Table Extension** allows you to modify a standard table. It can include:
 
 - ✅ Properties  
 - ✅ Fields  
@@ -449,7 +448,7 @@ A 🧩**Table Extension** allows you to modify a standard table. It can include:
 
 ## 🚩 **Page Extension Overview**
 
-A 📝**Page Extension** allows you to modify a standard page. It can include:
+- A 📝**Page Extension** allows you to modify a standard page. It can include:
 
 - ✅ Properties  
 - ✅ Controls  
@@ -458,57 +457,57 @@ A 📝**Page Extension** allows you to modify a standard page. It can include:
 - ✅ Page extension triggers  
 
 ### 📝 **Page Extension Properties:**
-- Use `Ctrl + Space` to view available properties for the standard page.
+- 👉 Use `Ctrl + Space` to view available properties for the standard page.
 
 ---
 
-## Page Extension Controls
+## 📝 **Page Extension Controls**
 
-- You can add new fields created via **table extensions** or use existing standard fields.
-- Adding controls works similarly to standard pages, but you must specify **where** the control should be added.
-- Only certain properties of existing controls can be changed.
-- All new controls **must have the affix**.
-
----
-
-## Page Extension Actions
-
-- Like controls, you can modify existing actions or create new ones.
-- Actions can be triggered **before** or **after** the standard code execution.
+- 👉 You can add new fields created via **table extensions** or use existing standard fields.
+- 👉 Adding controls works similarly to standard pages, but you must specify **where** the control should be added.
+- 👉 Only certain properties of existing controls can be changed.
+- 👉 All new controls **must have the affix**.
 
 ---
 
-## Page Extension Triggers
+## 📝 **Page Extension Actions**
 
-- You **cannot** modify standard page triggers directly.
-- However, you can add code to run **before** or **after** the standard trigger logic.
+- 👉 Like controls, you can modify existing actions or create new ones.
+- 👉 Actions can be triggered **before** or **after** the standard code execution.
 
 ---
 
-## Flow Fields – A Special Class of Fields
+## 🚩 **Page Extension Triggers**
 
-- FlowFields are a special type of field set using the **FieldClass** property.
+- ⚠️ You **cannot** modify standard page triggers directly.
+- ⚠️ However, you can add code to run **before** or **after** the standard trigger logic.
+
+---
+
+## 📊 **Flow Fields – A Special Class of Fields**
+
+- 👉 FlowFields are a special type of field set using the **FieldClass** property.
 - ⚠️ **DataClassification** cannot be set for FlowFields.
-- They allow simple calculations like **sum**, **count**, **min**, **max**, etc.
-- Can use **lookup** to display data from other tables or check if a record exists.
-- Use the **CalcFormula** property to define what the FlowField will show.
-- Always set **Editable = false** for FlowFields.
+- 👉 They allow simple calculations like **sum**, **count**, **min**, **max**, etc.
+- 👉 Can use **lookup** to display data from other tables or check if a record exists.
+- 👉 Use the **CalcFormula** property to define what the FlowField will show.
+- 👉 Always set **Editable = false** for FlowFields.
 
 ---
 
-## Procedures
+## 📜 **Procedures**
 
-A **procedure** is like a function – it holds reusable blocks of code to make your AL code more modular, readable, and easier to maintain.
+- 👉 A **procedure** is like a function – it holds reusable blocks of code to make your AL code more modular, readable, and easier to maintain.
 
-### Types of Procedures:
+### 📜 **Types of Procedures:**
 
-- **Global**: Can be called from any extension and object.
-- **Local**: Can only be called within the same object.
-- **Internal**: Can be called from any object, but **not** from different extensions.
+- 👉**Global**: Can be called from any extension and object.
+- 👉**Local**: Can only be called within the same object.
+- 👉**Internal**: Can be called from any object, but **not** from different extensions.
 
 ---
 
-## Procedure Syntax
+## 📜 **Procedure Syntax**
 
 ```al
 <Access Modifier> procedure <procedure name>()
@@ -538,7 +537,7 @@ begin
 end;
 ```
 
-- A procedure can also have **parameters**.
+- 👉 A procedure can also have **parameters**.
 
 ```al
 local procedure MyLocalProcedure(Customer: Record Customer)
@@ -554,8 +553,8 @@ begin
 end;
 ```
 
-- **Overloading** is possible, meaning you can have the same procedure name but with **different** **parameters**.
-- Procedures can also **return a value**
+- 👉 **Overloading** is possible, meaning you can have the same procedure name but with **different** **parameters**.
+- 👉 Procedures can also **return a value**
 
 ```al
 local procedure MyLocalProcedure(): Integer
@@ -564,22 +563,23 @@ begin
 end;
 ```
 
-- This returns an integer of value 10.
+- 👉 This returns an integer of value 10.
 
 --- 
-## Variables
 
-In AL, variables help store data that you can use later in your code. They come with **access modifiers** which determine their scope:
+## 🔢 **Variables**
 
-### Types of Variable Scopes:
-- **Global**:  
+- 👉 In AL, variables help store data that you can use later in your code. They come with **access modifiers** which determine their scope:
+
+### 🔢 **Types of Variable Scopes:**
+- 👉**Global**:  
   Declared at the object level and accessible throughout the entire object.
-- **Local**:  
+- 👉**Local**:  
   Declared inside a procedure or trigger and only available during that procedure or trigger’s execution.
 
 ---
 
-### Common Variable Types:
+### 🔢 **Common Variable Types:**
 
 | **Type**  | **Purpose**                                                 |
 |-----------|--------------------------------------------------------------|
@@ -590,11 +590,11 @@ In AL, variables help store data that you can use later in your code. They come 
 
 ---
 
-### Declaring Variables:
+### 🔢 **Declaring Variables:**
 
-- Always include the scope (global or local) when declaring a variable.
-- **Global variables** go under the object’s main `var` section.
-- **Local variables** go inside the procedure’s `var` block.
+- 👉 Always include the scope (global or local) when declaring a variable.
+- 👉 **Global variables** go under the object’s main `var` section.
+- 👉 **Local variables** go inside the procedure’s `var` block.
 
 ```al
 // Global variables example
@@ -613,9 +613,9 @@ end;
 
 ---
 
-### Assigning Variables:
+### 🔢 **Assigning Variables:**
 
-- Use the `:=` to assign a variable a value.
+- 👉 Use the `:=` to assign a variable a value.
 
 ```al
 local procedure MyLocalProcedure()
@@ -628,11 +628,11 @@ end;
 
 ---
 
-### Best Practices:
+### 🔢 **Best Practices:**
 
-- Keep **All global Variables** grouped together in one place. Avoid spreading multiple var sections around.
+- 👉 Keep **All global Variables** grouped together in one place. Avoid spreading multiple var sections around.
 
-- When variables are of same type, you can declare them on the same line to keep the code clean.
+- 👉 When variables are of same type, you can declare them on the same line to keep the code clean.
 
 ```al
 var
@@ -640,10 +640,10 @@ var
 ```
 ---
 
-## Rec - Special Variable on Page and Tables
+## 📜 **Rec - Special Variable on Page and Tables**
 
-- The `Rec` keyword is a special variable used to reference the current record in both **Page** and **Table** objects.
-- You can access specific fields/attributes of a record using `Rec.` followed by the field name.
+- 👉 The `Rec` keyword is a special variable used to reference the current record in both **Page** and **Table** objects.
+- 👉 You can access specific fields/attributes of a record using `Rec.` followed by the field name.
 
 ### Example:
 ```al
@@ -659,7 +659,7 @@ end;
 
 ## 🧠 If...Else Statement (Control Flow)
 
-The `if...else` statement allows you to execute code based on conditions.
+👉 The `if...else` statement allows you to execute code based on conditions.
 
 ---
 
@@ -706,7 +706,7 @@ else
 
 - ✅ **`else` is optional**:
   
-  When there's only a single line of code to run for the `if` condition, you can skip the `else` part if not needed.
+  👉 When there's only a single line of code to run for the `if` condition, you can skip the `else` part if not needed.
 
   ```al
   if Amount > 1000 then
