@@ -1,4 +1,4 @@
-page 60185 NumberSeriesSetupPage
+page 60185 "Number Series Setup Page"
 {
     ApplicationArea = All;
     Caption = 'NumberSeriesSetupPage';
@@ -21,4 +21,9 @@ page 60185 NumberSeriesSetupPage
             }
         }
     }
+    trigger OnOpenPage()
+    begin
+        if Rec.IsEmpty() then
+            Rec.Insert();
+    end;
 }

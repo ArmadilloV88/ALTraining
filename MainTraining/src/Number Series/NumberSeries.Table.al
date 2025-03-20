@@ -30,9 +30,11 @@ table 60183 "Number Series Table"
     }
     trigger OnInsert()
     var
+        Setup : Record NumberSeriesSetup;
         NoSM : Codeunit "No. Series";
     begin
         if No = '' then
-            No := NoSM.GetNextNo();
+            Setup.Get();
+            No := NoSM.GetNextNo(Setup."No.Series",WorkDate(),true);
     end;
 }

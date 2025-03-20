@@ -1,31 +1,36 @@
-page 60182 "Number Series Card Page"
+page 60186 "Number Series List"
 {
-    PageType = Card;
+    Caption = 'Number Series List';
+    PageType = List;
     ApplicationArea = All;
-    UsageCategory = Administration;
+    UsageCategory = Lists;
     SourceTable = "Number Series Table";
+    CardPageId = "Number Series Card Page";
     
     layout
     {
         area(Content)
         {
-                field(No; Rec.No)
+            repeater(General){
+                field(No;Rec.No)
                 {
-                    ToolTip = 'No.';
+                    ToolTip = 'Shows the No.';
                     ApplicationArea = All;
                 }
-                field(Name; Rec.Name)
+                field(Name;Rec.Name)
                 {
-                    ToolTip = 'Name';
+                    ToolTip = 'Shows the Name.';
                     ApplicationArea = All;
                 }
                 field(city;Rec.city)
                 {
-                    ToolTip = 'City';
+                    ToolTip = 'Shows the City.';
                     ApplicationArea = All;
                 }
+            }
         }
     }
+    
     actions
     {
         area(Processing)
