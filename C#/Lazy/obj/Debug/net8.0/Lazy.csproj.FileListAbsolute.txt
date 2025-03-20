@@ -1,0 +1,15 @@
+c:\Users\ccver\Documents\AL\ALTraining\C#\Lazy\bin\Debug\net8.0\Lazy.exe
+c:\Users\ccver\Documents\AL\ALTraining\C#\Lazy\bin\Debug\net8.0\Lazy.deps.json
+c:\Users\ccver\Documents\AL\ALTraining\C#\Lazy\bin\Debug\net8.0\Lazy.runtimeconfig.json
+c:\Users\ccver\Documents\AL\ALTraining\C#\Lazy\bin\Debug\net8.0\Lazy.dll
+c:\Users\ccver\Documents\AL\ALTraining\C#\Lazy\bin\Debug\net8.0\Lazy.pdb
+c:\Users\ccver\Documents\AL\ALTraining\C#\Lazy\obj\Debug\net8.0\Lazy.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\ccver\Documents\AL\ALTraining\C#\Lazy\obj\Debug\net8.0\Lazy.AssemblyInfoInputs.cache
+c:\Users\ccver\Documents\AL\ALTraining\C#\Lazy\obj\Debug\net8.0\Lazy.AssemblyInfo.cs
+c:\Users\ccver\Documents\AL\ALTraining\C#\Lazy\obj\Debug\net8.0\Lazy.csproj.CoreCompileInputs.cache
+c:\Users\ccver\Documents\AL\ALTraining\C#\Lazy\obj\Debug\net8.0\Lazy.sourcelink.json
+c:\Users\ccver\Documents\AL\ALTraining\C#\Lazy\obj\Debug\net8.0\Lazy.dll
+c:\Users\ccver\Documents\AL\ALTraining\C#\Lazy\obj\Debug\net8.0\refint\Lazy.dll
+c:\Users\ccver\Documents\AL\ALTraining\C#\Lazy\obj\Debug\net8.0\Lazy.pdb
+c:\Users\ccver\Documents\AL\ALTraining\C#\Lazy\obj\Debug\net8.0\Lazy.genruntimeconfig.cache
+c:\Users\ccver\Documents\AL\ALTraining\C#\Lazy\obj\Debug\net8.0\ref\Lazy.dll

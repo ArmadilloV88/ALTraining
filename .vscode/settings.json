@@ -51,5 +51,6 @@
             "color": "foldercolorizer.color_6600ff",
             "badge": "🟣"
         }
-    ]
+    ],
+    "dotnet.defaultSolution": "Lazy.sln"
 }
