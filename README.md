@@ -49,19 +49,19 @@ All these functions are integrated into a **centralized system**, improving effi
 | **Access**   | Anywhere (Internet required) | Local Network (No Internet needed) |
 | **Scalability** | Easy to Scale             | Requires IT Upgrades              |
 
-## ** ✅ Choose Cloud If:**  
+## ✅**Choose Cloud If:**  
 - ✅ Lower upfront costs with a **subscription model**  
 - ✅ No dedicated **IT team** for server management  
 - ✅ Need **remote access** & scalability  
 - ✅ Prefer **Microsoft handling security & backups**  
 
-## ** ✅ Choose On-Premise If:**  
+## ✅**Choose On-Premise If:**  
 - ✅ Require **full control** over data, security, & customization  
 - ✅ Have an **existing IT infrastructure** & staff  
 - ✅ Need **direct SQL access** & deeper integrations  
 - ✅ Prefer **manual updates** & self-hosted data  
 ---
-## ➕ Key Features of Setup for On-Premises Deployments
+## ➕ **Key Features of Setup for On-Premises Deployments**
 
 With the **Business Central Setup**, you can:
 
@@ -73,7 +73,7 @@ With the **Business Central Setup**, you can:
 
 ---
 
-## ➕ Installation Notes
+## ➕ **Installation Notes**
 
 Before proceeding with the installation of **Business Central**, consider the following:
 
@@ -83,7 +83,7 @@ Before proceeding with the installation of **Business Central**, consider the fo
 
 ---
 
-## 📍 Development in AL (Application Language)
+## 📍 **Development in AL (Application Language)**
 
 - 📍 **AL (Application Language)** is the primary programming language used for developing extensions, customizing business logic, and integrating **Microsoft Dynamics 365 Business Central** with other applications.
 
@@ -92,7 +92,7 @@ Before proceeding with the installation of **Business Central**, consider the fo
 - ➕ **Cloud-Ready ☁️**: AL is designed to build extensions, rather than modifying the base application.
 - ➕ **Integrated with Azure 🔗**: AL supports telemetry, API integrations, and **Power Automate**.
 
-### 🏷️ Key AL Objects
+### 🏷️ **Key AL Objects**
 
 | Object Type  | Purpose                                               |
 |--------------|-------------------------------------------------------|
@@ -105,14 +105,14 @@ Before proceeding with the installation of **Business Central**, consider the fo
 | **Interface**| Defines common methods for different objects.         |
 | **XMLPort**  | Imports or exports data in XML format.                |
 
-### 🏷️ AL Object Breakdown
+### 🏷️ **AL Object Breakdown**
 
 - 🏷️ **Table Objects**: Define the schema for tables that hold your data.
 - 🏷️ **Page Objects**: Represent the pages and interfaces seen by users.
 - 🏷️ **Code Units**: Contain the business logic and behavior of the application.
 - 🏷️ **Report Objects**: Define the layout and data used to generate reports.
 ---
-## 🔧 Code Analytics Used
+## 🔧 **Code Analytics Used**
 
 Several code analyzers help ensure the quality and adherence to best practices in your **AL** code:
 
@@ -126,7 +126,7 @@ Several code analyzers help ensure the quality and adherence to best practices i
 
 ---
 
-## 🏷️ File Naming Convention
+## 🏷️ **File Naming Convention**
 
 Follow the naming convention to keep your project files organized and consistent:
 
@@ -147,7 +147,7 @@ Follow the naming convention to keep your project files organized and consistent
 
 ---
 
-## Affixes and Suffixes
+## 📝 **Affixes and Suffixes**
 
 An affix or suffix should contain at least 3 characters to ensure unique code signatures within **AppSource**. For example:
 
@@ -158,7 +158,7 @@ An affix or suffix should contain at least 3 characters to ensure unique code si
 This ensures that there are unique code signatures in the Microsoft AppSource as it is mandatory that there must be no conflicts between apps, pages, or even tables.
 ---
 
-## 🗂️ Project Folder Structure
+## 🗂️ **Project Folder Structure**
 
 There are no mandatory practices or strict rules to follow when structuring your project folders. However, it's good practice to keep them organized and neat to ensure effective finding of certain files within a project:
 
@@ -167,7 +167,7 @@ There are no mandatory practices or strict rules to follow when structuring your
 
 ---
 
-## 📐 AL Object Range
+## 📐 **AL Object Range**
 
 - 📏 Each (or most) objects in the database must have a unique ID number. While a table and a page can share the same ID, all other objects must have distinct IDs.
   
@@ -179,13 +179,13 @@ There are no mandatory practices or strict rules to follow when structuring your
 
 ---
 
-# 📝AL (Application Language) Syntax
+# 📝**AL (Application Language) Syntax**
 
 ## 📝ttable - Table Object Structure
 
 Defines a database table in Business Central. Tables store data records.
 
-### It contains the following:
+### 📝It contains the following:
 - ✅ Table properties  
 - ✅ Set of fields  
 - ✅ Keys  
@@ -196,19 +196,19 @@ Defines a database table in Business Central. Tables store data records.
 
 ---
 
-## The table has 4 main properties consisting of:
+## 📝The table has 4 main properties consisting of:
 
-- **DataClassification** - Responsible for the classification of the table in terms of GDPR.
+- 👉**DataClassification** - Responsible for the classification of the table in terms of GDPR.
 
-- **Caption** - Caption of the table which should not contain the prefix or suffix.
+- 👉**Caption** - Caption of the table which should not contain the prefix or suffix.
 
-- **DrillDownPageId** - The name of the page shown when the user uses the DrillDown function on the page.
+- 👉**DrillDownPageId** - The name of the page shown when the user uses the DrillDown function on the page.
 
-- **LookupPageId** - The name of the page shown when the user uses the Lookup function on the page.
+- 👉**LookupPageId** - The name of the page shown when the user uses the Lookup function on the page.
 
 ---
 
-## Table Triggers
+## 🚩**Table Triggers**
 
 Allows you to add code directly to the table. There are 4 main triggers:
 
